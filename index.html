@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | Kai Funded ©</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #000;
+      --background: #fff;
+      --text: #222;
+      --gray: #777;
+      --accent: #f5f5f5;
+      --radius: 14px;
+      --shadow-light: rgba(0,0,0,0.07);
+      --shadow-dark: rgba(0,0,0,0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: var(--background);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #ddd;
+      z-index: 999;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    header h2 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 160px 20px 60px;
+      background: linear-gradient(to bottom right, #f9f9f9, #fff);
+      text-align: center;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--background);
+      background-color: var(--primary);
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 8px var(--shadow-light);
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px var(--shadow-dark);
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 750px;
+      border-radius: var(--radius);
+      border: 2px solid #eee;
+      margin: 3rem auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      display: block;
+      animation: fadeIn 1.4s ease forwards;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      animation: fadeIn 1.6s ease forwards;
+    }
+
+    .feature-card {
+      background-color: var(--accent);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 10px var(--shadow-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px var(--shadow-dark);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .note, .faq, .pricing, .cta-final {
+      background-color: var(--accent);
+      padding: 20px;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      color: var(--text);
+      max-width: 800px;
+      margin: 2rem auto;
+      animation: fadeIn 1.8s ease forwards;
+    }
+
+    .testimonial {
+      background-color: #f1f1f1;
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      margin: 3rem auto;
+      max-width: 700px;
+      color: #444;
+      font-style: italic;
+      position: relative;
+      box-shadow: 0 8px 20px var(--shadow-light);
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .testimonial::before {
+      content: "\201C";
+      font-size: 3.5rem;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      color: #ccc;
+      font-weight: 700;
+    }
+
+    .testimonial::after {
+      content: "\201D";
+      font-size: 3.5rem;
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      color: #ccc;
+      font-weight: 700;
+    }
+
+    .pricing .tier {
+      margin-bottom: 2rem;
+      text-align: center;
+      animation: fadeIn 2.2s ease forwards;
+    }
+
+    .pricing .tier h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing .tier p {
+      margin-bottom: 0.5rem;
+    }
+
+    .faq h3 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .faq p {
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: var(--gray);
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 2.4s ease forwards;
+    }
+
+    .links a {
+      color: var(--gray);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
+    /* Social icons styling */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .icon-link {
+      color: var(--gray);
+      transition: color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .icon-link:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .pricing .tier {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(12px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Kai Funded</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="terms-of-service.html">Terms</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Launch-Ready Websites Built For You</h1>
+    <p>Custom, conversion-optimized websites designed for creators, startups, and small businesses. Built with Google Sites, Shopify, GitHub—fast, professional, and affordable.</p>
+    <a href="https://buy.stripe.com/5kQ14m8qNbcogyG61w93y0M" target="_blank" rel="noopener" class="button">Get Your Site</a>
+  </section>
+
+  <img src="get-a-website.png" alt="Website Example" class="product-image" />
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Speedy Delivery</h3>
+      <p>Get your site live in as little as 48 hours.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Mobile Optimized</h3>
+      <p>Seamless experience on any device.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Affordable Plans</h3>
+      <p>Transparent pricing with no hidden fees.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Free Hosting Options</h3>
+      <p>Use platforms like Google Sites at no extra cost.</p>
+    </div>
+  </section>
+
+  <div class="note">
+    <p><strong>Choose Your Tier:</strong> Basic ($150), Standard ($450), Premium ($950)</p>
+    <p>Set other quantities to 0 during checkout. On mobile, tap “View Details” to adjust. Refresh if you need to start over.</p>
+  </div>
+
+  <section class="pricing">
+    <div class="tier">
+      <h3>Basic - $150</h3>
+      <p>1-page site | Delivered fast | Google Sites</p>
+    </div>
+    <div class="tier">
+      <h3>Standard - $450</h3>
+      <p>Up to 5 pages | 1 revision | Google Sites, GitHub</p>
+    </div>
+    <div class="tier">
+      <h3>Premium - $950</h3>
+      <p>Full site | 3 revisions | Shopify, GitHub, Google Sites</p>
+    </div>
+  </section>
+
+  <div class="testimonial">
+    I needed a landing page fast for my business launch. Kai Funded delivered in less than 48 hours. It looked better than I imagined!
+    <br>— Alex T., Startup Owner
+  </div>
+
+  <section class="faq">
+    <h3>Frequently Asked Questions</h3>
+    <br>
+    <p><strong>How fast is delivery?</strong><br>Typically within 48–72 hours depending on tier and complexity.</p>
+    <p><strong>Which platforms do you support?</strong><br>GitHub Pages, Shopify & Google Sites.</p>
+    <p><strong>What if I don’t have content?</strong><br>We can use placeholder text/images or help suggest a layout.</p>
+  </section>
+
+  <section class="cta-final" style="text-align: center;">
+    <h3>Ready to get your site?</h3>
+    <br>
+    <a href="https://buy.stripe.com/5kQ14m8qNbcogyG61w93y0M" class="button" target="_blank" rel="noopener">Start Now</a>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="terms-of-service.html">Terms of Service</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/kai.funded/" target="_blank" rel="noopener" aria-label="Instagram" class="icon-link">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.25 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-4.25 1.5a4.75 4.75 0 1 1 0 9.5 4.75 4.75 0 0 1 0-9.5zm0 1.5a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5z"/>
+        </svg>
+      </a>
+      <a href="https://t.me/kai_btc" target="_blank" rel="noopener" aria-label="Telegram" class="icon-link">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21.823 2.18a1.71 1.71 0 0 0-2.45-.77L2.947 10.54a1.37 1.37 0 0 0-.002 2.414l5.908 2.51 2.524 7.89a1.712 1.712 0 0 0 3.073 0l4.675-17.116a1.71 1.71 0 0 0-.302-1.058zM7.79 15.545l-1.525-5.36 9.195-4.716-7.67 10.076z"/>
+        </svg>
+      </a>
+      <a href="https://discord.gg/9gDt4Vfxbu" target="_blank" rel="noopener" aria-label="Discord" class="icon-link">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.211.375-.444.864-.608 1.249a18.623 18.623 0 0 0-5.516 0 12.638 12.638 0 0 0-.616-1.25.077.077 0 0 0-.078-.037 19.736 19.736 0 0 0-4.885 1.515.069.069 0 0 0-.032.027C2.11 9.045 1.58 13.5 2.298 17.825a.082.082 0 0 0 .031.056 19.923 19.923 0 0 0 5.993 3.034.076.076 0 0 0 .084-.027c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.105 13.026 13.026 0 0 1-1.872-.89.076.076 0 0 1-.007-.127c.125-.094.25-.192.367-.291a.076.076 0 0 1 .079-.01 11.55 11.55 0 0 0 6.385 0 .076.076 0 0 1 .08.009c.117.1.242.198.367.292a.076.076 0 0 1-.006.127 12.849 12.849 0 0 1-1.873.89.076.076 0 0 0-.04.105c.36.7.773 1.365 1.225 1.994a.076.076 0 0 0 .084.028 19.875 19.875 0 0 0 5.994-3.034.074.074 0 0 0 .031-.055c.7-5.177-.838-9.642-3.548-13.43a.061.061 0 0 0-.031-.027zM8.02 15.331c-1.18 0-2.148-1.085-2.148-2.419 0-1.333.955-2.418 2.148-2.418 1.204 0 2.172 1.095 2.148 2.419 0 1.333-.955 2.418-2.148 2.418zm7.974 0c-1.18 0-2.148-1.085-2.148-2.419 0-1.333.955-2.418 2.148-2.418 1.204 0 2.172 1.095 2.148 2.419 0 1.333-.944 2.418-2.148 2.418z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div style="margin-top: 1rem;">&copy; 2025 Kai Funded. All rights reserved.</div>
+  </footer>
+</body>
+</html>
