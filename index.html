@@ -17,12 +17,7 @@
       --shadow-dark: rgba(0,0,0,0.15);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
@@ -46,11 +41,7 @@
       animation: fadeIn 1s ease forwards;
     }
 
-    header h2 {
-      font-size: 1.2rem;
-      margin: 0;
-    }
-
+    header h2 { font-size: 1.2rem; margin: 0; }
     nav a {
       margin-left: 1rem;
       color: var(--text);
@@ -58,11 +49,7 @@
       font-weight: 500;
       transition: color 0.3s ease;
     }
-
-    nav a:hover {
-      text-decoration: underline;
-      color: var(--primary);
-    }
+    nav a:hover { text-decoration: underline; color: var(--primary); }
 
     .hero {
       padding: 160px 20px 60px;
@@ -70,19 +57,8 @@
       text-align: center;
       animation: fadeIn 1.2s ease forwards;
     }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-    }
-
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
     .button {
       display: inline-block;
       padding: 14px 36px;
@@ -97,24 +73,12 @@
       box-shadow: 0 4px 8px var(--shadow-light);
       cursor: pointer;
     }
-
     .button:hover {
       background-color: transparent;
       color: var(--primary);
       border: 2px solid var(--primary);
       transform: scale(1.05);
       box-shadow: 0 6px 14px var(--shadow-dark);
-    }
-
-    .product-image {
-      width: 100%;
-      max-width: 750px;
-      border-radius: var(--radius);
-      border: 2px solid #eee;
-      margin: 3rem auto;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      display: block;
-      animation: fadeIn 1.4s ease forwards;
     }
 
     .features {
@@ -126,7 +90,6 @@
       margin: 0 auto 3rem;
       animation: fadeIn 1.6s ease forwards;
     }
-
     .feature-card {
       background-color: var(--accent);
       border-radius: var(--radius);
@@ -136,16 +99,11 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
     }
-
     .feature-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 25px var(--shadow-dark);
     }
-
-    .feature-card h3 {
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-    }
+    .feature-card h3 { margin-bottom: 8px; font-size: 1.2rem; }
 
     .note, .faq, .pricing, .cta-final {
       background-color: var(--accent);
@@ -170,7 +128,6 @@
       box-shadow: 0 8px 20px var(--shadow-light);
       animation: fadeIn 2s ease forwards;
     }
-
     .testimonial::before {
       content: "\201C";
       font-size: 3.5rem;
@@ -180,7 +137,6 @@
       color: #ccc;
       font-weight: 700;
     }
-
     .testimonial::after {
       content: "\201D";
       font-size: 3.5rem;
@@ -191,30 +147,12 @@
       font-weight: 700;
     }
 
-    .pricing .tier {
-      margin-bottom: 2rem;
-      text-align: center;
-      animation: fadeIn 2.2s ease forwards;
-    }
+    .pricing .tier { margin-bottom: 2rem; text-align: center; animation: fadeIn 2.2s ease forwards; }
+    .pricing .tier h3 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+    .pricing .tier p { margin-bottom: 0.5rem; }
 
-    .pricing .tier h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .pricing .tier p {
-      margin-bottom: 0.5rem;
-    }
-
-    .faq h3 {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .faq p {
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
-    }
+    .faq h3 { margin-bottom: 1rem; font-weight: 600; }
+    .faq p { margin-bottom: 1.5rem; line-height: 1.5; }
 
     footer {
       margin-top: 60px;
@@ -224,55 +162,25 @@
       padding: 2rem;
       animation: fadeIn 2.4s ease forwards;
     }
+    .links a { color: var(--gray); text-decoration: none; margin: 0 8px; transition: color 0.3s ease; }
+    .links a:hover { text-decoration: underline; color: var(--primary); }
 
-    .links a {
-      color: var(--gray);
-      text-decoration: none;
-      margin: 0 8px;
-      transition: color 0.3s ease;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-      color: var(--primary);
-    }
-
-    /* Social icons styling */
     .social-icons {
       display: flex;
       justify-content: center;
       gap: 1.2rem;
       margin-top: 1rem;
     }
-
-    .icon-link {
-      color: var(--gray);
-      transition: color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .icon-link:hover {
-      color: var(--primary);
-    }
+    .icon-link { color: var(--gray); transition: color 0.3s ease; display: inline-flex; align-items: center; }
+    .icon-link:hover { color: var(--primary); }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .features {
-        grid-template-columns: 1fr;
-      }
-      .pricing .tier {
-        margin-bottom: 1.5rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .features { grid-template-columns: 1fr; }
+      .pricing .tier { margin-bottom: 1.5rem; }
     }
 
-    /* Fade-in animation */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(12px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+    @keyframes fadeIn { from {opacity: 0; transform: translateY(12px);} to {opacity: 1; transform: translateY(0);} }
   </style>
 </head>
 <body>
@@ -288,10 +196,8 @@
   <section class="hero">
     <h1>Launch-Ready Websites Built For You</h1>
     <p>Custom, conversion-optimized websites designed for creators, startups, and small businesses. Built with Google Sites, Shopify, GitHub—fast, professional, and affordable.</p>
-    <a href="https://buy.stripe.com/5kQ14m8qNbcogyG61w93y0M" target="_blank" rel="noopener" class="button">Get Your Site</a>
+    <a href="https://t.me/kai_btc" target="_blank" rel="noopener" class="button">Request Access</a>
   </section>
-
-  <img src="get-a-website.png" alt="Website Example" class="product-image" />
 
   <section class="features">
     <div class="feature-card">
@@ -348,7 +254,7 @@
   <section class="cta-final" style="text-align: center;">
     <h3>Ready to get your site?</h3>
     <br>
-    <a href="https://buy.stripe.com/5kQ14m8qNbcogyG61w93y0M" class="button" target="_blank" rel="noopener">Start Now</a>
+    <a href="https://t.me/kai_btc" class="button" target="_blank" rel="noopener">Request Access</a>
   </section>
 
   <footer>
