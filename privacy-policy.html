@@ -4,86 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy | Kai Funded</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #000;
+      --background: #fff;
+      --text: #222;
+      --gray: #777;
+      --accent: #f5f5f5;
+      --radius: 12px;
+      --shadow-light: rgba(0,0,0,0.07);
+      --shadow-dark: rgba(0,0,0,0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
       padding: 2rem;
       max-width: 800px;
       margin: auto;
-      line-height: 1.7;
-      color: #333;
-      background-color: #fff;
+      scroll-behavior: smooth;
     }
-    h1, h2 {
-      color: #000;
-    }
+
+    h1, h2 { animation: fadeIn 1s ease forwards; }
     h1 {
       text-align: center;
       margin-bottom: 2rem;
+      font-weight: 700;
+      font-size: 2rem;
     }
     h2 {
       margin-top: 2rem;
       font-size: 1.2rem;
+      font-weight: 600;
     }
-    ul {
-      padding-left: 1.25rem;
-      margin-top: 0.5rem;
-    }
+
+    p, ul { animation: fadeIn 1.2s ease forwards; margin-bottom: 1rem; }
+    ul { padding-left: 1.4rem; margin-top: 0.5rem; }
     a {
-      color: #007acc;
+      color: var(--primary);
       text-decoration: none;
+      transition: color 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; color: #555; }
+
     footer {
-      margin-top: 3rem;
-      font-size: 0.95rem;
       text-align: center;
-      color: #777;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--gray);
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
     }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      position: sticky;
+      bottom: 1rem;
+    }
+    .icon-link { color: var(--gray); transition: color 0.3s ease; font-weight: 600; }
+    .icon-link:hover { color: var(--primary); }
+
+    .home-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .home-btn:hover {
+      background: var(--primary);
+      color: var(--background);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--shadow-light);
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
 
-  <p>At Kai Funded, your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you interact with our website and services.</p>
+  <p>Your privacy is important to us. This Privacy Policy explains how Kai Funded collects, uses, and protects your personal information when you use our website and services.</p>
 
   <h2>1. Information We Collect</h2>
-  <p>We may collect personal information such as your name, email address, and any details you provide when contacting us or placing an order.</p>
+  <ul>
+    <li>Personal information you provide directly (e.g., email, name, project details).</li>
+    <li>Information automatically collected when you use the website (e.g., IP address, browser type, usage data).</li>
+  </ul>
 
   <h2>2. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
   <ul>
-    <li>Process orders and deliver services</li>
-    <li>Respond to your inquiries</li>
-    <li>Improve our website and offerings</li>
+    <li>To provide and manage services requested by you.</li>
+    <li>To communicate about your project or respond to inquiries.</li>
+    <li>To improve our website, services, and user experience.</li>
   </ul>
 
-  <h2>3. Payment Processing</h2>
-  <p>All payments are processed through Stripe. Stripe may collect and store your data according to their own privacy practices, which you can view on their website.</p>
+  <h2>3. Sharing & Disclosure</h2>
+  <p>Kai Funded does not sell, trade, or rent your personal information to third parties. We may share information with trusted partners only to provide our services and when legally required.</p>
 
-  <h2>4. Cookies</h2>
-  <p>We may use cookies or similar technologies to improve your browsing experience and monitor site traffic. You can disable cookies in your browser settings.</p>
+  <h2>4. Cookies & Tracking</h2>
+  <p>We may use cookies and similar tracking technologies to analyze usage, improve user experience, and optimize our website performance. You can disable cookies in your browser settings, but some features may not function properly.</p>
 
-  <h2>5. Data Protection</h2>
-  <p>Your personal data is stored securely and is not shared, sold, or disclosed to any third party without your consent, except as required by law.</p>
+  <h2>5. Data Retention</h2>
+  <p>We retain personal information only as long as necessary to fulfill the purposes described or comply with legal obligations.</p>
 
   <h2>6. Your Rights</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li>Access and review the personal data we hold about you</li>
-    <li>Request corrections or deletions of personal data</li>
-  </ul>
-  <p>To exercise any of these rights, email us at <a href="mailto:thekaifunded@gmail.com">thekaifunded@gmail.com</a>.</p>
+  <p>You may request access, correction, or deletion of your personal information at any time by contacting us at <a href="mailto:thekaifunded@gmail.com">thekaifunded@gmail.com</a>. You may also opt out of marketing communications at any time.</p>
 
-  <h2>7. Changes to This Policy</h2>
-  <p>This Privacy Policy may be updated from time to time. All updates will be posted on this page with a revised date.</p>
+  <h2>7. Security</h2>
+  <p>We implement reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, or misuse. However, no method is completely secure, and we cannot guarantee absolute security.</p>
+
+  <h2>8. Changes to This Policy</h2>
+  <p>Kai Funded reserves the right to update this Privacy Policy at any time. Changes will be reflected on this page with a new revision date.</p>
+
+  <h2>9. Contact</h2>
+  <p>If you have any questions regarding this Privacy Policy, email us at <a href="mailto:thekaifunded@gmail.com">thekaifunded@gmail.com</a>.</p>
 
   <footer>
-    Last updated: July 7, 2025<br>
-    <a href="index.html">← Back to Home</a>
+    Last updated: August 18, 2025<br>
+    <a href="index.html" class="home-btn">← Back to Home</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/kai.funded/" target="_blank" class="icon-link">Instagram</a>
+      <a href="https://t.me/kai_btc" target="_blank" class="icon-link">Telegram</a>
+      <a href="https://discord.gg/9gDt4Vfxbu" target="_blank" class="icon-link">Discord</a>
+    </div>
   </footer>
 </body>
 </html>
