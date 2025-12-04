@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Home | Kai Funded ©</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,6 +34,7 @@
     
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
     }
     
     body {
@@ -42,6 +43,9 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     /* Header with glass effect */
@@ -50,12 +54,13 @@
       position: fixed;
       top: 0;
       left: 0;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 2rem;
+      padding: 1rem 5%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       z-index: 1000;
       transition: all 0.3s ease;
@@ -63,7 +68,7 @@
     }
     
     header.scrolled {
-      padding: 0.8rem 2rem;
+      padding: 0.8rem 5%;
       box-shadow: var(--shadow-light);
     }
 
@@ -72,7 +77,7 @@
       align-items: center;
       gap: 10px;
       font-weight: 800;
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       color: var(--primary);
       text-decoration: none;
     }
@@ -95,15 +100,23 @@
       color: white;
       font-weight: 800;
       font-size: 18px;
+      flex-shrink: 0;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    
     nav a {
-      margin-left: 2rem;
+      margin-left: clamp(1rem, 2vw, 2rem);
       color: var(--text);
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
       position: relative;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      white-space: nowrap;
     }
     
     nav a:hover { 
@@ -125,9 +138,20 @@
       width: 100%;
     }
 
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
     /* Hero Section */
     .hero {
-      padding: 180px 20px 80px;
+      padding: clamp(120px, 20vw, 180px) 5% clamp(60px, 10vw, 80px);
       background: linear-gradient(to bottom right, #f8fafc, #f0f9ff);
       text-align: center;
       position: relative;
@@ -151,34 +175,37 @@
       z-index: 1;
       max-width: 800px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 800;
-      margin-bottom: 1.5rem;
+      margin-bottom: clamp(1rem, 3vw, 1.5rem);
       background: linear-gradient(to right, #1e40af, #7c3aed);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       animation: fadeInUp 0.8s ease forwards;
       line-height: 1.2;
+      padding: 0 1rem;
     }
     
     .hero p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       max-width: 700px;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
       color: var(--text-light);
       animation: fadeInUp 1s ease forwards;
+      padding: 0 1rem;
     }
     
     .button {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 16px 40px;
-      font-size: 1.1rem;
+      padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 40px);
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
       font-weight: 600;
       color: white;
       background: var(--gradient);
@@ -191,6 +218,7 @@
       position: relative;
       overflow: hidden;
       animation: fadeInUp 1.2s ease forwards;
+      white-space: nowrap;
     }
     
     .button::before {
@@ -227,10 +255,11 @@
     /* Features Section */
     .section-title {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
       font-weight: 700;
-      margin-bottom: 3rem;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
       color: var(--text);
+      padding: 0 1rem;
     }
     
     .section-title span {
@@ -243,16 +272,17 @@
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 80px 20px;
+      gap: clamp(20px, 3vw, 30px);
+      padding: clamp(40px, 8vw, 80px) 5%;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .feature-card {
       background-color: white;
       border-radius: var(--radius);
-      padding: 2rem;
+      padding: clamp(1.5rem, 3vw, 2rem);
       text-align: center;
       box-shadow: var(--shadow-light);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -285,17 +315,18 @@
     }
     
     .feature-icon {
-      width: 70px;
-      height: 70px;
+      width: clamp(50px, 8vw, 70px);
+      height: clamp(50px, 8vw, 70px);
       background: var(--gradient-light);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto clamp(1rem, 2vw, 1.5rem);
       color: white;
-      font-size: 1.8rem;
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
       transition: all 0.3s ease;
+      flex-shrink: 0;
     }
     
     .feature-card:hover .feature-icon {
@@ -303,29 +334,31 @@
     }
     
     .feature-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
+      margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
+      font-size: clamp(1.2rem, 1.8vw, 1.4rem);
       font-weight: 700;
       color: var(--text);
     }
     
     .feature-card p {
       color: var(--text-light);
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      line-height: 1.5;
     }
 
     /* Note Section */
     .note {
       background: var(--gradient);
-      padding: 30px;
+      padding: clamp(20px, 3vw, 30px);
       border-radius: var(--radius);
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
       color: white;
       max-width: 1000px;
-      margin: 40px auto;
+      margin: clamp(20px, 4vw, 40px) auto;
       text-align: center;
       box-shadow: var(--shadow-medium);
       animation: pulse 2s infinite;
+      width: calc(100% - 10%);
     }
     
     .note strong {
@@ -334,7 +367,7 @@
 
     /* Pricing Section */
     .pricing {
-      padding: 80px 20px;
+      padding: clamp(40px, 8vw, 80px) 5%;
       background-color: var(--accent);
       position: relative;
     }
@@ -343,15 +376,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: clamp(20px, 3vw, 30px);
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .pricing-card {
       background-color: white;
       border-radius: var(--radius);
-      padding: 2.5rem 2rem;
+      padding: clamp(2rem, 3vw, 2.5rem) clamp(1.5rem, 2vw, 2rem);
       text-align: center;
       flex: 1;
       min-width: 280px;
@@ -389,15 +423,15 @@
     }
     
     .pricing-card h3 {
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 2.2vw, 1.8rem);
       margin-bottom: 0.5rem;
       color: var(--text);
     }
     
     .price {
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 5vw, 3rem);
       font-weight: 800;
-      margin: 1.5rem 0;
+      margin: clamp(1rem, 2vw, 1.5rem) 0;
       background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
@@ -407,7 +441,7 @@
     .pricing-card ul {
       list-style: none;
       padding: 0;
-      margin: 2rem 0;
+      margin: clamp(1.5rem, 3vw, 2rem) 0;
       text-align: left;
     }
     
@@ -416,6 +450,7 @@
       color: var(--text-light);
       position: relative;
       padding-left: 30px;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
     }
     
     .pricing-card li::before {
@@ -429,19 +464,20 @@
     /* Testimonial */
     .testimonial {
       background-color: white;
-      padding: 3rem 2.5rem;
+      padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.5vw, 2.5rem);
       border-radius: var(--radius);
-      margin: 80px auto;
+      margin: clamp(40px, 8vw, 80px) auto;
       max-width: 800px;
       color: var(--text);
       position: relative;
       box-shadow: var(--shadow-medium);
       border-left: 5px solid var(--primary);
+      width: calc(100% - 10%);
     }
     
     .testimonial::before {
       content: "\201C";
-      font-size: 5rem;
+      font-size: clamp(3rem, 6vw, 5rem);
       position: absolute;
       left: 20px;
       top: 10px;
@@ -451,7 +487,7 @@
     }
     
     .testimonial-text {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       font-style: italic;
       line-height: 1.8;
       margin-bottom: 1.5rem;
@@ -461,23 +497,25 @@
       font-weight: 700;
       color: var(--text);
       text-align: right;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
     }
     
     .testimonial-role {
       color: var(--text-light);
       text-align: right;
-      font-size: 0.95rem;
+      font-size: clamp(0.85rem, 1.1vw, 0.95rem);
     }
 
     /* FAQ */
     .faq {
-      padding: 80px 20px;
+      padding: clamp(40px, 8vw, 80px) 5%;
       max-width: 800px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .faq-item {
-      margin-bottom: 1.5rem;
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow-light);
@@ -490,9 +528,9 @@
     
     .faq-question {
       background-color: var(--accent);
-      padding: 1.5rem;
+      padding: clamp(1rem, 2vw, 1.5rem);
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -505,19 +543,20 @@
     }
     
     .faq-answer {
-      padding: 0 1.5rem;
+      padding: 0 clamp(1rem, 2vw, 1.5rem);
       max-height: 0;
       overflow: hidden;
       transition: all 0.3s ease;
     }
     
     .faq-answer.active {
-      padding: 1.5rem;
+      padding: clamp(1rem, 2vw, 1.5rem);
       max-height: 500px;
     }
     
     .faq-toggle {
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
     
     .faq-toggle.active {
@@ -527,25 +566,26 @@
     /* Final CTA */
     .cta-final {
       background: var(--gradient);
-      padding: 80px 20px;
+      padding: clamp(40px, 8vw, 80px) 5%;
       text-align: center;
       border-radius: var(--radius);
       max-width: 1000px;
-      margin: 80px auto;
+      margin: clamp(40px, 8vw, 80px) auto;
       color: white;
       box-shadow: var(--shadow-dark);
+      width: calc(100% - 10%);
     }
     
     .cta-final h3 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: clamp(1rem, 3vw, 1.5rem);
       font-weight: 700;
     }
     
     .cta-final p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       max-width: 700px;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
       opacity: 0.9;
     }
 
@@ -554,15 +594,15 @@
       background-color: #111827;
       color: #d1d5db;
       text-align: center;
-      padding: 3rem 2rem 2rem;
-      margin-top: 60px;
+      padding: clamp(2rem, 4vw, 3rem) 5% clamp(1.5rem, 3vw, 2rem);
+      margin-top: clamp(40px, 8vw, 60px);
     }
     
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: clamp(1rem, 2vw, 2rem);
+      margin-bottom: clamp(1.5rem, 3vw, 2rem);
       flex-wrap: wrap;
     }
     
@@ -571,6 +611,7 @@
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
     }
     
     .footer-links a:hover {
@@ -581,13 +622,13 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin: clamp(1.5rem, 3vw, 2rem) 0;
     }
     
     .icon-link {
-      width: 48px;
-      height: 48px;
+      width: clamp(40px, 6vw, 48px);
+      height: clamp(40px, 6vw, 48px);
       border-radius: 50%;
       background-color: #374151;
       display: flex;
@@ -596,6 +637,7 @@
       color: white;
       transition: all 0.3s ease;
       text-decoration: none;
+      flex-shrink: 0;
     }
     
     .icon-link:hover {
@@ -604,8 +646,8 @@
     }
     
     .copyright {
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      margin-top: clamp(1rem, 3vw, 2rem);
+      font-size: clamp(0.8rem, 1.1vw, 0.9rem);
       color: #9ca3af;
     }
 
@@ -654,29 +696,118 @@
     .pricing-card:nth-child(3) { animation: fadeInUp 0.8s ease 0.6s forwards; opacity: 0; }
 
     /* Responsive */
+    @media (max-width: 992px) {
+      .pricing-card {
+        min-width: 250px;
+      }
+    }
+    
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1.1rem; }
-      .section-title { font-size: 1.8rem; }
-      .pricing-container { flex-direction: column; align-items: center; }
-      .pricing-card { max-width: 100%; }
-      .pricing-card.popular { transform: scale(1); }
-      .pricing-card.popular:hover { transform: translateY(-10px); }
-      nav { display: none; } /* Consider adding mobile menu */
+      nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        padding: 2rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+      }
+      
+      nav.active {
+        display: flex;
+        transform: translateY(0);
+      }
+      
+      nav a {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+      }
+      
       .mobile-menu-btn {
         display: block;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--text);
-        cursor: pointer;
+      }
+      
+      .pricing-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .pricing-card {
+        max-width: 100%;
+        min-width: unset;
+      }
+      
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+      
+      .pricing-card.popular:hover {
+        transform: translateY(-10px);
       }
     }
     
     @media (max-width: 480px) {
-      .hero h1 { font-size: 2rem; }
-      .button { padding: 14px 30px; }
-      .feature-card { padding: 1.5rem; }
+      header {
+        padding: 1rem 1rem;
+      }
+      
+      header.scrolled {
+        padding: 0.8rem 1rem;
+      }
+      
+      .hero {
+        padding: 140px 1rem 60px;
+      }
+      
+      .features, .pricing, .faq, .cta-final {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      .note, .testimonial {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: calc(100% - 2rem);
+      }
+      
+      .feature-card {
+        padding: 1.5rem;
+      }
+      
+      .pricing-card {
+        padding: 1.5rem;
+      }
+    }
+    
+    /* Print styles */
+    @media print {
+      .button, .mobile-menu-btn, .social-icons {
+        display: none !important;
+      }
+      
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      
+      .hero, .pricing, .cta-final {
+        background: white !important;
+        color: black !important;
+      }
+      
+      .hero h1, .section-title span, .price {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        color: black !important;
+      }
     }
   </style>
 </head>
@@ -686,14 +817,14 @@
       <div class="logo-icon">K</div>
       <span>Kai Funded</span>
     </a>
-    <nav>
+    <nav id="main-nav">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="terms-of-service.html">Terms</a>
       <a href="privacy-policy.html">Privacy</a>
     </nav>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
+    <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-menu-toggle">
       <i class="fas fa-bars"></i>
     </button>
   </header>
@@ -742,7 +873,7 @@
   </section>
 
   <div class="note">
-    <p><strong>Choose Your Tier:</strong> Basic ($150), Standard ($450), Premium ($950)</p>
+    <p><strong>Choose Your Tier:</strong> Basic ($250), Standard ($650), Premium ($1200)</p>
     <p>Set other quantities to 0 during checkout. On mobile, tap "View Details" to adjust. Refresh if you need to start over.</p>
   </div>
 
@@ -751,7 +882,7 @@
     <div class="pricing-container">
       <div class="pricing-card">
         <h3>Basic</h3>
-        <div class="price">$150</div>
+        <div class="price">$250</div>
         <ul>
           <li>1-page site</li>
           <li>Delivered in 48 hours</li>
@@ -766,7 +897,7 @@
       <div class="pricing-card popular">
         <div class="popular-badge">Most Popular</div>
         <h3>Standard</h3>
-        <div class="price">$450</div>
+        <div class="price">$650</div>
         <ul>
           <li>Up to 5 pages</li>
           <li>1 revision included</li>
@@ -781,7 +912,7 @@
       
       <div class="pricing-card">
         <h3>Premium</h3>
-        <div class="price">$950</div>
+        <div class="price">$1200</div>
         <ul>
           <li>Full custom website</li>
           <li>3 revisions included</li>
@@ -906,6 +1037,25 @@
       }
     });
 
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    const nav = document.getElementById('main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      mobileMenuBtn.innerHTML = nav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
     // FAQ toggle functionality
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
@@ -942,24 +1092,6 @@
         }
       });
     });
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('nav');
-    
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => {
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-        nav.style.flexDirection = 'column';
-        nav.style.position = 'absolute';
-        nav.style.top = '100%';
-        nav.style.left = '0';
-        nav.style.width = '100%';
-        nav.style.backgroundColor = 'white';
-        nav.style.padding = '2rem';
-        nav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-      });
-    }
 
     // Add animation on scroll
     const observerOptions = {
