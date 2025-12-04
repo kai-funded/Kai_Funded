@@ -6,7 +6,274 @@
   <title>Terms of Service | Kai Funded</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="shared.css">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #60a5fa;
+      --background: #ffffff;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --gray: #9ca3af;
+      --accent: #f3f4f6;
+      --accent-dark: #e5e7eb;
+      --radius: 16px;
+      --radius-sm: 8px;
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+      --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    .policy-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .policy-header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Content */
+    .content-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: var(--shadow-medium);
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gradient);
+      border-radius: 3px;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .section ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section li {
+      margin-bottom: 0.5rem;
+      color: var(--text-light);
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .section li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: -5px;
+    }
+
+    .section a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .section a:hover {
+      color: var(--primary-dark);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Footer */
+    .policy-footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--accent-dark);
+      animation: fadeInUp 1.4s ease forwards;
+    }
+
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background: var(--gradient);
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-medium);
+      margin-bottom: 2rem;
+    }
+
+    .home-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .icon-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .icon-link:hover {
+      background: var(--gradient);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .update-date {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    /* Stagger animations for sections */
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.3s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.5s; }
+    .section:nth-child(6) { animation-delay: 0.6s; }
+    .section:nth-child(7) { animation-delay: 0.7s; }
+    .section:nth-child(8) { animation-delay: 0.8s; }
+    .section:nth-child(9) { animation-delay: 0.9s; }
+    .section:nth-child(10) { animation-delay: 1s; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .policy-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .policy-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .content-card {
+        padding: 1.5rem 1rem;
+      }
+      
+      .home-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -22,8 +289,8 @@
 
       <section class="section">
         <h2>1. Services</h2>
-        <p>Kai Funded designs and delivers custom-built websites using platforms such as Google Sites, GitHub and Shopify. Clients pay for the custom HTML coding and website development based on their budget and project needs.</p>
-        <p>Most platforms are free to use once the site is coded, but builders like Shopify may require additional subscription costs. Message us on Telegram to find out more and work together to create the best website solution for you.</p>
+        <p>Kai Funded designs and delivers custom-built websites using GitHub Pages. Clients pay for custom HTML/CSS/JavaScript coding and website development based on their budget and project needs.</p>
+        <p>GitHub Pages provides free, reliable hosting for static websites. Message us on Telegram to discuss your project requirements and create the perfect website solution for you.</p>
       </section>
 
       <section class="section">
@@ -38,7 +305,7 @@
 
       <section class="section">
         <h2>4. Client Responsibilities</h2>
-        <p>Clients are responsible for providing necessary materials (e.g., logos, text, product info, via ZIP File) and must respond promptly to communication. Delays in response may extend project timelines.</p>
+        <p>Clients are responsible for providing necessary materials (e.g., logos, text, images, via ZIP File) and must respond promptly to communication. Delays in response may extend project timelines.</p>
         <p>We recommend preparing all content and assets before the project begins to ensure timely delivery.</p>
       </section>
 
@@ -62,7 +329,7 @@
 
       <section class="section">
         <h2>8. Limitation of Liability</h2>
-        <p>Kai Funded is not liable for damages, data loss, or losses arising from website use, misuse, or downtime after delivery. Hosting and third-party platform policies also apply.</p>
+        <p>Kai Funded is not liable for damages, data loss, or losses arising from website use, misuse, or downtime after delivery. GitHub Pages hosting policies also apply.</p>
         <p>We recommend regular backups and maintenance for all websites.</p>
       </section>
 
@@ -132,6 +399,3 @@
   </script>
 </body>
 </html>
-
-
-
