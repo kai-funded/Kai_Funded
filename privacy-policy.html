@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Home | Kai Funded ©</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Kai Funded</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -19,11 +19,10 @@
       --accent-dark: #e8e8ed;
       --radius: 16px;
       --radius-sm: 8px;
-      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-      --shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      --shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
       --gradient: linear-gradient(135deg, #000000 0%, #2c2c2e 100%);
-      --gradient-light: linear-gradient(135deg, #3a3a3a 0%, #6e6e73 100%);
     }
 
     * { 
@@ -31,624 +30,193 @@
       margin: 0; 
       padding: 0; 
     }
-    
+
     html {
       scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
     }
-    
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
+      line-height: 1.7;
+      min-height: 100vh;
+      background: #ffffff;
+      padding: 1rem;
     }
 
-    header {
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      z-index: 1000;
-      transition: all 0.3s ease;
-      animation: slideDown 0.5s ease forwards;
-    }
-    
-    header.scrolled {
-      padding: 0.8rem 5%;
-      box-shadow: var(--shadow-light);
-      background-color: rgba(255, 255, 255, 0.98);
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .policy-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-top: 1rem;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .policy-header h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 800;
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      color: var(--primary);
-      text-decoration: none;
-    }
-    
-    .logo span {
+      margin-bottom: 0.5rem;
       background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: #000000;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      font-size: 18px;
-      flex-shrink: 0;
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
+    .content-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: clamp(1.5rem, 3vw, 3rem);
+      box-shadow: var(--shadow-medium);
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
     }
-    
-    nav a {
-      margin-left: clamp(1rem, 2vw, 2rem);
+
+    .section {
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .section h2 {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
       color: var(--text);
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #000000;
+      border-radius: 3px;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      font-size: clamp(0.95rem, 1.5vw, 1rem);
+    }
+
+    .section ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section li {
+      margin-bottom: 0.5rem;
+      color: var(--text-light);
+      position: relative;
+      padding-left: 10px;
+      font-size: clamp(0.95rem, 1.5vw, 1rem);
+    }
+
+    .section li::before {
+      content: '•';
+      color: #000000;
+      font-weight: bold;
+      position: absolute;
+      left: -5px;
+    }
+
+    .section a {
+      color: #000000;
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
-      position: relative;
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-      white-space: nowrap;
-    }
-    
-    nav a:hover { 
-      color: #000000;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #000000;
-      transition: width 0.3s ease;
-    }
-    
-    nav a:hover::after {
-      width: 100%;
+      border-bottom: 1px dashed transparent;
     }
 
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--text);
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
+    .section a:hover {
+      color: #3a3a3a;
+      border-bottom-color: #000000;
     }
 
-    .hero {
-      padding: clamp(120px, 20vw, 180px) 5% clamp(60px, 10vw, 80px);
-      background: var(--background);
+    .policy-footer {
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233a3a3a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.4;
-      z-index: 0;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--accent-dark);
+      animation: fadeInUp 1.4s ease forwards;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      margin-bottom: clamp(1rem, 3vw, 1.5rem);
-      background: linear-gradient(to right, #000000, #3a3a3a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: fadeInUp 0.8s ease forwards;
-      line-height: 1.2;
-      padding: 0 1rem;
-    }
-    
-    .hero p {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
-      max-width: 700px;
-      margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
-      color: var(--text-light);
-      animation: fadeInUp 1s ease forwards;
-      padding: 0 1rem;
-    }
-    
-    .button {
+    .home-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 40px);
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
+      padding: 0.8rem 1.5rem;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
       font-weight: 600;
       color: white;
       background: #000000;
       border: none;
       border-radius: var(--radius);
       text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       box-shadow: var(--shadow-medium);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 1.2s ease forwards;
-      white-space: nowrap;
+      margin-bottom: 1.5rem;
     }
-    
-    .button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.7s ease;
-    }
-    
-    .button:hover {
+
+    .home-btn:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-dark);
       background: #1a1a1a;
     }
-    
-    .button:hover::before {
-      left: 100%;
-    }
-    
-    .button-outline {
-      background: transparent;
-      border: 2px solid #000000;
-      color: #000000;
-    }
-    
-    .button-outline:hover {
-      background: #000000;
-      color: white;
-    }
 
-    .section-title {
-      text-align: center;
-      font-size: clamp(1.8rem, 4vw, 2.2rem);
-      font-weight: 700;
-      margin-bottom: clamp(2rem, 5vw, 3rem);
-      color: var(--text);
-      padding: 0 1rem;
-    }
-    
-    .section-title span {
-      background: linear-gradient(135deg, #000000 0%, #3a3a3a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: clamp(20px, 3vw, 30px);
-      padding: clamp(40px, 8vw, 80px) 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    
-    .feature-card {
-      background-color: white;
-      border-radius: var(--radius);
-      padding: clamp(1.5rem, 3vw, 2rem);
-      text-align: center;
-      box-shadow: var(--shadow-light);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: default;
-      border: 1px solid var(--gray);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: #000000;
-      transform: scaleY(0);
-      transition: transform 0.4s ease;
-    }
-    
-    .feature-card:hover::before {
-      transform: scaleY(1);
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-dark);
-      border-color: #000000;
-    }
-    
-    .feature-icon {
-      width: clamp(50px, 8vw, 70px);
-      height: clamp(50px, 8vw, 70px);
-      background: linear-gradient(135deg, #3a3a3a 0%, #6e6e73 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto clamp(1rem, 2vw, 1.5rem);
-      color: white;
-      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-    
-    .feature-card:hover .feature-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-    
-    .feature-card h3 {
-      margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
-      font-size: clamp(1.2rem, 1.8vw, 1.4rem);
-      font-weight: 700;
-      color: var(--text);
-    }
-    
-    .feature-card p {
-      color: var(--text-light);
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-      line-height: 1.5;
-    }
-
-    .note {
-      background: #000000;
-      padding: clamp(20px, 3vw, 30px);
-      border-radius: var(--radius);
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
-      color: white;
-      max-width: 1000px;
-      margin: clamp(20px, 4vw, 40px) auto;
-      text-align: center;
-      box-shadow: var(--shadow-medium);
-      animation: pulse 2s infinite;
-      width: calc(100% - 10%);
-    }
-    
-    .note strong {
-      font-weight: 700;
-    }
-
-    .pricing {
-      padding: clamp(40px, 8vw, 80px) 5%;
-      background-color: var(--accent);
-      position: relative;
-    }
-    
-    .pricing-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: clamp(20px, 3vw, 30px);
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    
-    .pricing-card {
-      background-color: white;
-      border-radius: var(--radius);
-      padding: clamp(2rem, 3vw, 2.5rem) clamp(1.5rem, 2vw, 2rem);
-      text-align: center;
-      flex: 1;
-      min-width: 280px;
-      max-width: 350px;
-      box-shadow: var(--shadow-light);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-dark);
-    }
-    
-    .pricing-card.popular {
-      border: 2px solid #000000;
-      transform: scale(1.05);
-    }
-    
-    .pricing-card.popular:hover {
-      transform: scale(1.05) translateY(-10px);
-    }
-    
-    .popular-badge {
-      position: absolute;
-      top: 0;
-      right: 20px;
-      background: #000000;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-    
-    .pricing-card h3 {
-      font-size: clamp(1.5rem, 2.2vw, 1.8rem);
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    
-    .price {
-      font-size: clamp(2.5rem, 5vw, 3rem);
-      font-weight: 800;
-      margin: clamp(1rem, 2vw, 1.5rem) 0;
-      background: linear-gradient(135deg, #000000 0%, #3a3a3a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    .pricing-card ul {
-      list-style: none;
-      padding: 0;
-      margin: clamp(1.5rem, 3vw, 2rem) 0;
-      text-align: left;
-    }
-    
-    .pricing-card li {
-      padding: 8px 0;
-      color: var(--text-light);
-      position: relative;
-      padding-left: 30px;
-      font-size: clamp(0.9rem, 1.1vw, 1rem);
-    }
-    
-    .pricing-card li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #000000;
-      font-weight: bold;
-    }
-
-    .testimonial {
-      background-color: white;
-      padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.5vw, 2.5rem);
-      border-radius: var(--radius);
-      margin: clamp(40px, 8vw, 80px) auto;
-      max-width: 800px;
-      color: var(--text);
-      position: relative;
-      box-shadow: var(--shadow-medium);
-      border-left: 5px solid #000000;
-      width: calc(100% - 10%);
-    }
-    
-    .testimonial::before {
-      content: "\201C";
-      font-size: clamp(3rem, 6vw, 5rem);
-      position: absolute;
-      left: 20px;
-      top: 10px;
-      color: #3a3a3a;
-      font-weight: 800;
-      opacity: 0.2;
-    }
-    
-    .testimonial-text {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
-      font-style: italic;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-    
-    .testimonial-author {
-      font-weight: 700;
-      color: var(--text);
-      text-align: right;
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-    }
-    
-    .testimonial-role {
-      color: var(--text-light);
-      text-align: right;
-      font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-    }
-
-    .faq {
-      padding: clamp(40px, 8vw, 80px) 5%;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    
-    .faq-item {
-      margin-bottom: clamp(1rem, 2vw, 1.5rem);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-light);
-      transition: all 0.3s ease;
-    }
-    
-    .faq-item:hover {
-      box-shadow: var(--shadow-medium);
-    }
-    
-    .faq-question {
-      background-color: var(--accent);
-      padding: clamp(1rem, 2vw, 1.5rem);
-      font-weight: 600;
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-question:hover {
-      background-color: var(--accent-dark);
-    }
-    
-    .faq-answer {
-      padding: 0 clamp(1rem, 2vw, 1.5rem);
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-answer.active {
-      padding: clamp(1rem, 2vw, 1.5rem);
-      max-height: 500px;
-    }
-    
-    .faq-toggle {
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-    
-    .faq-toggle.active {
-      transform: rotate(180deg);
-    }
-
-    .cta-final {
-      background: #000000;
-      padding: clamp(40px, 8vw, 80px) 5%;
-      text-align: center;
-      border-radius: var(--radius);
-      max-width: 1000px;
-      margin: clamp(40px, 8vw, 80px) auto;
-      color: white;
-      box-shadow: var(--shadow-dark);
-      width: calc(100% - 10%);
-    }
-    
-    .cta-final h3 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: clamp(1rem, 3vw, 1.5rem);
-      font-weight: 700;
-    }
-    
-    .cta-final p {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
-      max-width: 700px;
-      margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
-      opacity: 0.9;
-    }
-
-    footer {
-      background-color: #1d1d1f;
-      color: #a1a1a6;
-      text-align: center;
-      padding: clamp(2rem, 4vw, 3rem) 5% clamp(1.5rem, 3vw, 2rem);
-      margin-top: clamp(40px, 8vw, 60px);
-    }
-    
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: clamp(1rem, 2vw, 2rem);
-      margin-bottom: clamp(1.5rem, 3vw, 2rem);
-      flex-wrap: wrap;
-    }
-    
-    .footer-links a {
-      color: #a1a1a6;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      font-size: clamp(0.9rem, 1.1vw, 1rem);
-    }
-    
-    .footer-links a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: clamp(1rem, 2vw, 1.5rem);
-      margin: clamp(1.5rem, 3vw, 2rem) 0;
+      gap: 1rem;
+      margin: 1.5rem 0;
     }
-    
+
     .icon-link {
-      width: clamp(40px, 6vw, 48px);
-      height: clamp(40px, 6vw, 48px);
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background-color: #2c2c2e;
+      background-color: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: var(--text);
       transition: all 0.3s ease;
       text-decoration: none;
-      flex-shrink: 0;
-    }
-    
-    .icon-link:hover {
-      background: #000000;
-      transform: translateY(-5px);
-    }
-    
-    .copyright {
-      margin-top: clamp(1rem, 3vw, 2rem);
-      font-size: clamp(0.8rem, 1.1vw, 0.9rem);
-      color: #8e8e93;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .icon-link:hover {
+      background: #000000;
+      color: white;
+      transform: translateY(-3px);
     }
-    
+
+    .update-date {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
     @keyframes fadeInUp {
       from { 
         opacity: 0; 
@@ -659,421 +227,165 @@
         transform: translateY(0); 
       }
     }
-    
-    @keyframes slideDown {
-      from { 
-        opacity: 0; 
-        transform: translateY(-20px); 
-      }
-      to { 
-        opacity: 1; 
-        transform: translateY(0); 
-      }
-    }
-    
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 0, 0, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
-    }
-    
-    .feature-card:nth-child(1) { animation: fadeInUp 0.6s ease 0.2s forwards; opacity: 0; }
-    .feature-card:nth-child(2) { animation: fadeInUp 0.6s ease 0.4s forwards; opacity: 0; }
-    .feature-card:nth-child(3) { animation: fadeInUp 0.6s ease 0.6s forwards; opacity: 0; }
-    .feature-card:nth-child(4) { animation: fadeInUp 0.6s ease 0.8s forwards; opacity: 0; }
-    
-    .pricing-card:nth-child(1) { animation: fadeInUp 0.8s ease 0.2s forwards; opacity: 0; }
-    .pricing-card:nth-child(2) { animation: fadeInUp 0.8s ease 0.4s forwards; opacity: 0; }
-    .pricing-card:nth-child(3) { animation: fadeInUp 0.8s ease 0.6s forwards; opacity: 0; }
 
-    @media (max-width: 992px) {
-      .pricing-card {
-        min-width: 250px;
-      }
-    }
-    
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.3s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.5s; }
+    .section:nth-child(6) { animation-delay: 0.6s; }
+    .section:nth-child(7) { animation-delay: 0.7s; }
+    .section:nth-child(8) { animation-delay: 0.8s; }
+    .section:nth-child(9) { animation-delay: 0.9s; }
+    .section:nth-child(10) { animation-delay: 1s; }
+    .section:nth-child(11) { animation-delay: 1.1s; }
+
     @media (max-width: 768px) {
-      nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        padding: 2rem;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
+      .container {
+        padding: 0.5rem;
       }
       
-      nav.active {
-        display: flex;
-        transform: translateY(0);
-      }
-      
-      nav a {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      .pricing-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .pricing-card {
-        max-width: 100%;
-        min-width: unset;
-      }
-      
-      .pricing-card.popular {
-        transform: scale(1);
-      }
-      
-      .pricing-card.popular:hover {
-        transform: translateY(-10px);
+      .content-card {
+        padding: 1.5rem 1rem;
       }
     }
-    
+
     @media (max-width: 480px) {
-      header {
-        padding: 1rem 1rem;
-      }
-      
-      header.scrolled {
-        padding: 0.8rem 1rem;
-      }
-      
-      .hero {
-        padding: 140px 1rem 60px;
-      }
-      
-      .features, .pricing, .faq, .cta-final {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      
-      .note, .testimonial {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        width: calc(100% - 2rem);
-      }
-      
-      .feature-card {
-        padding: 1.5rem;
-      }
-      
-      .pricing-card {
-        padding: 1.5rem;
-      }
-    }
-    
-    @media print {
-      .button, .mobile-menu-btn, .social-icons {
-        display: none !important;
-      }
-      
       body {
-        background: white !important;
-        color: black !important;
+        padding: 0.5rem;
       }
       
-      .hero, .pricing, .cta-final {
-        background: white !important;
-        color: black !important;
+      .container {
+        padding: 0.5rem;
       }
       
-      .hero h1, .section-title span, .price {
-        background: none !important;
-        -webkit-background-clip: unset !important;
-        background-clip: unset !important;
-        color: black !important;
+      .content-card {
+        padding: 1rem;
+      }
+      
+      .home-btn {
+        padding: 0.7rem 1.2rem;
+      }
+      
+      .icon-link {
+        width: 36px;
+        height: 36px;
       }
     }
   </style>
 </head>
 <body>
-  <header id="main-header">
-    <a href="#" class="logo">
-      <div class="logo-icon">K</div>
-      <span>Kai Funded</span>
-    </a>
-    <nav id="main-nav">
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="terms-of-service.html">Terms</a>
-      <a href="privacy-policy.html">Privacy</a>
-    </nav>
-    <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-menu-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-  </header>
+  <div class="container">
+    <header class="policy-header">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Your privacy is important to us. Learn how we protect your information.</p>
+    </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Professional GitHub Pages Websites</h1>
-      <p>Custom, conversion-optimized websites built exclusively with GitHub Pages. Perfect for creators, startups, and small businesses who want fast, professional, and affordable web presence.</p>
-      <a href="https://t.me/kai_btc" target="_blank" rel="noopener" class="button">
-        <i class="fas fa-paper-plane"></i>
-        Request Access
-      </a>
-    </div>
-  </section>
+    <main class="content-card">
+      <section class="section">
+        <p>Your privacy is important to us. This Privacy Policy explains how Kai Funded collects, uses, and protects your personal information when you use our website and services.</p>
+      </section>
 
-  <section id="features" class="features">
-    <h2 class="section-title">Why Choose <span>Kai Funded</span></h2>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fas fa-bolt"></i>
-      </div>
-      <h3>Speedy Delivery</h3>
-      <p>Get your site live in as little as 48 hours. We prioritize efficiency without compromising quality.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fas fa-mobile-alt"></i>
-      </div>
-      <h3>Mobile Optimized</h3>
-      <p>Seamless experience on any device. All our websites are fully responsive and mobile-first.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fas fa-tag"></i>
-      </div>
-      <h3>Affordable Plans</h3>
-      <p>Transparent pricing with no hidden fees. Choose a plan that fits your budget and needs.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fab fa-github"></i>
-      </div>
-      <h3>GitHub Pages Expert</h3>
-      <p>Specializing exclusively in GitHub Pages for fast, reliable, and free hosting solutions.</p>
-    </div>
-  </section>
-
-  <div class="note">
-    <p><strong>Choose Your Tier:</strong> Basic ($650), Standard ($1600), Premium ($3200)</p>
-  </div>
-
-  <section id="pricing" class="pricing">
-    <h2 class="section-title">Simple, <span>Transparent</span> Pricing</h2>
-    <div class="pricing-container">
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <div class="price">$650</div>
+      <section class="section">
+        <h2>1. Information We Collect</h2>
         <ul>
-          <li>1-page site</li>
-          <li>Delivered in 48 hours</li>
-          <li>GitHub Pages hosting</li>
-          <li>Mobile responsive design</li>
-          <li>Basic SEO setup</li>
-          <li>Custom domain support</li>
+          <li><strong>Personal information</strong> you provide directly (e.g., email, name, project details).</li>
+          <li><strong>Communication data</strong> from emails, Telegram messages, and contact forms.</li>
+          <li><strong>Information automatically collected</strong> when you use the website (e.g., IP address, browser type, usage data).</li>
+          <li><strong>Payment information</strong> processed securely through third-party providers (we don't store payment details).</li>
         </ul>
-        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Get Started</a>
+      </section>
+
+      <section class="section">
+        <h2>2. How We Use Your Information</h2>
+        <ul>
+          <li>To provide and manage GitHub Pages website development services requested by you.</li>
+          <li>To communicate about your project or respond to inquiries.</li>
+          <li>To improve our website, services, and user experience.</li>
+          <li>To send important updates about our services (you can opt out anytime).</li>
+          <li>To comply with legal obligations and protect our rights.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>3. Sharing & Disclosure</h2>
+        <p>Kai Funded does not sell, trade, or rent your personal information to third parties. We may share information with trusted partners only to provide our services and when legally required.</p>
+        <p>We work with secure payment processors and GitHub for hosting services. We ensure all third parties comply with data protection regulations.</p>
+      </section>
+
+      <section class="section">
+        <h2>4. Cookies & Tracking</h2>
+        <p>We may use cookies and similar tracking technologies to analyze usage, improve user experience, and optimize our website performance. You can disable cookies in your browser settings, but some features may not function properly.</p>
+        <p>We use analytics tools to understand how visitors interact with our site, helping us improve our services and user experience.</p>
+      </section>
+
+      <section class="section">
+        <h2>5. Data Retention</h2>
+        <p>We retain personal information only as long as necessary to fulfill the purposes described or comply with legal obligations.</p>
+        <p>Project-related data is retained for 3 years after project completion for reference and support purposes. You can request deletion of your data at any time.</p>
+      </section>
+
+      <section class="section">
+        <h2>6. Your Rights</h2>
+        <p>You may request access, correction, or deletion of your personal information at any time by contacting us at <a href="mailto:thekaifunded@gmail.com">thekaifunded@gmail.com</a>. You may also opt out of marketing communications at any time.</p>
+        <p>Depending on your location, you may have additional rights under data protection laws like GDPR or CCPA.</p>
+      </section>
+
+      <section class="section">
+        <h2>7. Security</h2>
+        <p>We implement reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, or misuse. However, no method is completely secure, and we cannot guarantee absolute security.</p>
+        <p>We use encryption, secure protocols, and regular security assessments to protect your data.</p>
+      </section>
+
+      <section class="section">
+        <h2>8. International Data Transfers</h2>
+        <p>As an online service, your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place for such transfers.</p>
+      </section>
+
+      <section class="section">
+        <h2>9. Children's Privacy</h2>
+        <p>Our services are not directed to individuals under 16. We do not knowingly collect personal information from children. If we become aware of such collection, we will take steps to delete it.</p>
+      </section>
+
+      <section class="section">
+        <h2>10. Changes to This Policy</h2>
+        <p>Kai Funded reserves the right to update this Privacy Policy at any time. Changes will be reflected on this page with a new revision date. We encourage you to review this policy periodically.</p>
+      </section>
+
+      <section class="section">
+        <h2>11. Contact</h2>
+        <p>If you have any questions regarding this Privacy Policy, email us at <a href="mailto:thekaifunded@gmail.com">thekaifunded@gmail.com</a> or message us on Telegram at <a href="https://t.me/kai_btc" target="_blank">@kai_btc</a>.</p>
+      </section>
+    </main>
+
+    <footer class="policy-footer">
+      <a href="index.html" class="home-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+      </a>
+      
+      <div class="social-icons">
+        <a href="https://www.instagram.com/kai.funded/" target="_blank" class="icon-link" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/kai_btc" target="_blank" class="icon-link" aria-label="Telegram">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="https://discord.gg/9gDt4Vfxbu" target="_blank" class="icon-link" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="mailto:thekaifunded@gmail.com" class="icon-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
       
-      <div class="pricing-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <h3>Standard</h3>
-        <div class="price">$1600</div>
-        <ul>
-          <li>Up to 5 pages</li>
-          <li>1 revision included</li>
-          <li>GitHub Pages deployment</li>
-          <li>Advanced SEO optimization</li>
-          <li>Contact form integration</li>
-          <li>Analytics setup</li>
-          <li>Performance optimization</li>
-        </ul>
-        <a href="https://t.me/kai_btc" target="_blank" class="button">Get Started</a>
+      <div class="update-date">
+        Last updated: December 5, 2025
       </div>
-      
-      <div class="pricing-card">
-        <h3>Premium</h3>
-        <div class="price">$3200</div>
-        <ul>
-          <li>Full custom website</li>
-          <li>3 revisions included</li>
-          <li>GitHub Pages expert setup</li>
-          <li>Premium SEO optimization</li>
-          <li>Priority support</li>
-          <li>Custom animations & effects</li>
-          <li>Advanced performance tuning</li>
-          <li>Git repository handover</li>
-        </ul>
-        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Get Started</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="testimonial">
-    <p class="testimonial-text">I needed a landing page fast for my business launch. Kai Funded delivered in less than 48 hours. It looked better than I imagined! The attention to detail and responsive design exceeded my expectations. The GitHub Pages setup was seamless.</p>
-    <p class="testimonial-author">Alex T.</p>
-    <p class="testimonial-role">Startup Owner</p>
+    </footer>
   </div>
-
-  <section id="faq" class="faq">
-    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-    <div class="faq-item">
-      <div class="faq-question">
-        How fast is delivery?
-        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-      </div>
-      <div class="faq-answer">
-        <p>Typically within 48–72 hours depending on tier and complexity. Basic sites are usually delivered within 48 hours, while premium sites with more features may take up to 72 hours.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        Which platform do you use?
-        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-      </div>
-      <div class="faq-answer">
-        <p>We specialize exclusively in GitHub Pages. This allows us to deliver fast, reliable, and free hosting with professional results. GitHub Pages is perfect for portfolios, business sites, and landing pages.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        What if I don't have content?
-        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-      </div>
-      <div class="faq-answer">
-        <p>We can use placeholder text/images or help suggest a layout. We also offer content creation services as an add-on. During our initial consultation, we'll discuss your needs and create a content strategy.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        Do you offer ongoing support?
-        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-      </div>
-      <div class="faq-answer">
-        <p>Yes! All our plans include 30 days of free support. After that, we offer affordable maintenance packages to keep your website updated, secure, and performing optimally on GitHub Pages.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        Can I use my own domain?
-        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-      </div>
-      <div class="faq-answer">
-        <p>Absolutely! We'll help you set up a custom domain with your GitHub Pages site. All our plans include custom domain configuration support.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-final">
-    <h3>Ready for your professional GitHub Pages website?</h3>
-    <p>Join dozens of satisfied clients who've launched their online presence with Kai Funded. Get started today with a risk-free consultation.</p>
-    <a href="https://t.me/kai_btc" class="button" target="_blank" rel="noopener">
-      <i class="fab fa-github"></i>
-      Start Your Project
-    </a>
-  </section>
-
-  <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="terms-of-service.html">Terms of Service</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </div>
-
-    <div class="social-icons">
-      <a href="https://www.instagram.com/kai.funded/" target="_blank" rel="noopener" aria-label="Instagram" class="icon-link">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://t.me/kai_btc" target="_blank" rel="noopener" aria-label="Telegram" class="icon-link">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
-      <a href="https://discord.gg/9gDt4Vfxbu" target="_blank" rel="noopener" aria-label="Discord" class="icon-link">
-        <i class="fab fa-discord"></i>
-      </a>
-      <a href="mailto:thekaifunded@gmail.com" aria-label="Email" class="icon-link">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-
-    <div class="copyright">
-      &copy; 2026 Kai Funded. All rights reserved.
-    </div>
-  </footer>
 
   <script>
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('main-header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
-    const nav = document.getElementById('main-nav');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      mobileMenuBtn.innerHTML = nav.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
-    });
-
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-      });
-    });
-
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const toggle = question.querySelector('.faq-toggle');
-        
-        document.querySelectorAll('.faq-answer.active').forEach(activeAnswer => {
-          if (activeAnswer !== answer) {
-            activeAnswer.classList.remove('active');
-            activeAnswer.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
-          }
-        });
-        
-        answer.classList.toggle('active');
-        toggle.classList.toggle('active');
-      });
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -1088,12 +400,12 @@
       });
     }, observerOptions);
 
-    document.querySelectorAll('.feature-card, .pricing-card, .testimonial, .faq-item').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    document.querySelectorAll('.section').forEach(el => {
       observer.observe(el);
     });
+
+    document.querySelector('.content-card').style.opacity = '1';
+    document.querySelector('.content-card').style.transform = 'translateY(0)';
   </script>
 </body>
 </html>
