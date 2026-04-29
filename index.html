@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Home | Kai Funded ©</title>
+  <title>Kai Funded</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -19,43 +19,31 @@
       --accent-dark: #e8e8ed;
       --radius: 16px;
       --radius-sm: 8px;
-      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-      --shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      --shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
       --gradient: linear-gradient(135deg, #000000 0%, #2c2c2e 100%);
-      --gradient-light: linear-gradient(135deg, #3a3a3a 0%, #6e6e73 100%);
     }
 
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; }
     
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--background);
+      background: var(--background);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
     }
 
     header {
-      width: 100%;
       position: fixed;
       top: 0;
       left: 0;
-      background-color: rgba(255, 255, 255, 0.96);
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -63,636 +51,417 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       z-index: 1000;
       transition: all 0.3s ease;
-      animation: slideDown 0.5s ease forwards;
     }
     
-    header.scrolled {
-      padding: 0.8rem 5%;
-      box-shadow: var(--shadow-light);
-      background-color: rgba(255, 255, 255, 0.98);
-    }
+    header.scrolled { padding: 0.8rem 5%; box-shadow: var(--shadow-light); }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 800;
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      color: var(--primary);
+      font-size: 1.3rem;
       text-decoration: none;
-    }
-    
-    .logo span {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
     }
     
     .logo-icon {
       width: 32px;
       height: 32px;
-      background: #000000;
+      background: #000;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-weight: 800;
-      font-size: 18px;
-      flex-shrink: 0;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-    }
-    
-    nav a {
-      margin-left: clamp(1rem, 2vw, 2rem);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-      white-space: nowrap;
-    }
-    
-    nav a:hover { 
-      color: #000000;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #000000;
-      transition: width 0.3s ease;
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
+    .logo span { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--text);
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
-    }
+    nav { display: flex; align-items: center; }
+    nav a { margin-left: 2rem; color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    nav a:hover { color: #000; }
+
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
     .hero {
-      padding: clamp(120px, 20vw, 180px) 5% clamp(60px, 10vw, 80px);
-      background: var(--background);
+      padding: 140px 5% 80px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      background: var(--background);
     }
     
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233a3a3a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.4;
-      z-index: 0;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: 3rem;
       font-weight: 800;
-      margin-bottom: clamp(1rem, 3vw, 1.5rem);
-      background: linear-gradient(to right, #000000, #3a3a3a);
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #000, #3a3a3a);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      animation: fadeInUp 0.8s ease forwards;
-      line-height: 1.2;
-      padding: 0 1rem;
     }
     
     .hero p {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-size: 1.2rem;
       max-width: 700px;
-      margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+      margin: 0 auto 2rem;
       color: var(--text-light);
-      animation: fadeInUp 1s ease forwards;
-      padding: 0 1rem;
     }
+    
+    .platform-badge {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .platform {
+      background: var(--accent);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    
+    .platform i { margin-right: 8px; }
     
     .button {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 40px);
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
+      padding: 14px 32px;
       font-weight: 600;
       color: white;
-      background: #000000;
-      border: none;
+      background: #000;
       border-radius: var(--radius);
       text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s;
       box-shadow: var(--shadow-medium);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 1.2s ease forwards;
-      white-space: nowrap;
     }
     
-    .button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.7s ease;
-    }
-    
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-dark);
-      background: #1a1a1a;
-    }
-    
-    .button:hover::before {
-      left: 100%;
-    }
-    
-    .button-outline {
-      background: transparent;
-      border: 2px solid #000000;
-      color: #000000;
-    }
-    
-    .button-outline:hover {
-      background: #000000;
-      color: white;
-    }
+    .button:hover { transform: translateY(-3px); background: #1a1a1a; }
+    .button-outline { background: transparent; border: 2px solid #000; color: #000; }
+    .button-outline:hover { background: #000; color: white; }
 
     .section-title {
       text-align: center;
-      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: clamp(2rem, 5vw, 3rem);
-      color: var(--text);
-      padding: 0 1rem;
+      margin-bottom: 3rem;
     }
     
-    .section-title span {
-      background: linear-gradient(135deg, #000000 0%, #3a3a3a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+    .section-title span { background: linear-gradient(135deg, #000 0%, #3a3a3a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: clamp(20px, 3vw, 30px);
-      padding: clamp(40px, 8vw, 80px) 5%;
+      gap: 30px;
+      padding: 60px 5%;
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .feature-card {
-      background-color: white;
+      background: white;
       border-radius: var(--radius);
-      padding: clamp(1.5rem, 3vw, 2rem);
+      padding: 2rem;
       text-align: center;
       box-shadow: var(--shadow-light);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: default;
       border: 1px solid var(--gray);
-      position: relative;
-      overflow: hidden;
+      transition: all 0.3s;
     }
     
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: #000000;
-      transform: scaleY(0);
-      transition: transform 0.4s ease;
-    }
-    
-    .feature-card:hover::before {
-      transform: scaleY(1);
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-dark);
-      border-color: #000000;
-    }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-dark); }
     
     .feature-icon {
-      width: clamp(50px, 8vw, 70px);
-      height: clamp(50px, 8vw, 70px);
-      background: linear-gradient(135deg, #3a3a3a 0%, #6e6e73 100%);
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #3a3a3a, #6e6e73);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+      margin: 0 auto 1.5rem;
       color: white;
-      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
+      font-size: 1.5rem;
+    }
+
+    .pill-switch {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 50px;
     }
     
-    .feature-card:hover .feature-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-    
-    .feature-card h3 {
-      margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
-      font-size: clamp(1.2rem, 1.8vw, 1.4rem);
-      font-weight: 700;
-      color: var(--text);
-    }
-    
-    .feature-card p {
+    .pill {
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: var(--accent);
       color: var(--text-light);
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-      line-height: 1.5;
-    }
-
-    .note {
-      background: #000000;
-      padding: clamp(20px, 3vw, 30px);
-      border-radius: var(--radius);
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
-      color: white;
-      max-width: 1000px;
-      margin: clamp(20px, 4vw, 40px) auto;
-      text-align: center;
-      box-shadow: var(--shadow-medium);
-      animation: pulse 2s infinite;
-      width: calc(100% - 10%);
     }
     
-    .note strong {
-      font-weight: 700;
+    .pill.active {
+      background: #000;
+      color: white;
     }
+    
+    .pill:hover:not(.active) { background: var(--accent-dark); }
 
-    .pricing {
-      padding: clamp(40px, 8vw, 80px) 5%;
-      background-color: var(--accent);
-      position: relative;
+    .pricing-section {
+      padding: 60px 5%;
+      background: var(--accent);
     }
     
     .pricing-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: clamp(20px, 3vw, 30px);
-      max-width: 1200px;
+      gap: 30px;
+      max-width: 1300px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .pricing-card {
-      background-color: white;
+      background: white;
       border-radius: var(--radius);
-      padding: clamp(2rem, 3vw, 2.5rem) clamp(1.5rem, 2vw, 2rem);
+      padding: 2rem;
       text-align: center;
       flex: 1;
       min-width: 280px;
-      max-width: 350px;
+      max-width: 380px;
       box-shadow: var(--shadow-light);
-      transition: all 0.4s ease;
+      transition: all 0.3s;
       position: relative;
-      overflow: hidden;
     }
     
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-dark);
-    }
-    
-    .pricing-card.popular {
-      border: 2px solid #000000;
-      transform: scale(1.05);
-    }
-    
-    .pricing-card.popular:hover {
-      transform: scale(1.05) translateY(-10px);
-    }
+    .pricing-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-dark); }
+    .pricing-card.popular { border: 2px solid #000; transform: scale(1.02); }
+    .pricing-card.popular:hover { transform: scale(1.02) translateY(-5px); }
     
     .popular-badge {
       position: absolute;
       top: 0;
       right: 20px;
-      background: #000000;
+      background: #000;
       color: white;
-      padding: 8px 16px;
+      padding: 6px 14px;
       border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      font-size: 0.8rem;
+    }
+    
+    .pricing-card h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    
+    .price { font-size: 2.5rem; font-weight: 800; margin: 1rem 0 0.5rem; }
+    .price small { font-size: 1rem; font-weight: 500; color: var(--text-light); }
+    
+    .design-fee { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem; }
+    .design-fee strong { color: var(--text); }
+    
+    .initial-payment {
+      background: var(--accent);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      margin: 1rem 0;
       font-size: 0.9rem;
-      font-weight: 600;
     }
     
-    .pricing-card h3 {
-      font-size: clamp(1.5rem, 2.2vw, 1.8rem);
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
+    .initial-payment strong { color: #000; font-size: 1rem; }
     
-    .price {
-      font-size: clamp(2.5rem, 5vw, 3rem);
-      font-weight: 800;
-      margin: clamp(1rem, 2vw, 1.5rem) 0;
-      background: linear-gradient(135deg, #000000 0%, #3a3a3a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .what-you-get {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin: 10px 0;
+      letter-spacing: 0.5px;
     }
     
     .pricing-card ul {
       list-style: none;
-      padding: 0;
-      margin: clamp(1.5rem, 3vw, 2rem) 0;
       text-align: left;
+      margin: 1.5rem 0;
     }
     
     .pricing-card li {
       padding: 8px 0;
       color: var(--text-light);
+      padding-left: 28px;
       position: relative;
-      padding-left: 30px;
-      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      font-size: 0.85rem;
     }
     
-    .pricing-card li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #000000;
-      font-weight: bold;
+    .pricing-card li::before { content: '✓'; position: absolute; left: 0; color: #000; font-weight: bold; }
+    
+    .badge-list {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--gray);
     }
+    
+    .badge-item {
+      display: inline-block;
+      background: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      margin: 3px;
+    }
+    
+    .github-transfer {
+      background: var(--accent);
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+    }
+    
+    .github-transfer i { margin-right: 5px; }
+
+    .note-badge {
+      background: var(--accent-dark);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      max-width: 800px;
+      margin: 30px auto 0;
+      font-size: 0.9rem;
+    }
+    
+    .compare-box {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+    }
+    
+    .compare-col { text-align: center; }
+    .compare-col h4 { margin-bottom: 15px; font-size: 1rem; }
+    .compare-col ul { list-style: none; }
+    .compare-col li { padding: 6px 0; color: var(--text-light); }
+    .compare-col li.yes { color: #000; font-weight: 500; }
+    .compare-col li.yes::before { content: '✓ '; color: #000; font-weight: bold; }
+    .compare-col li.no { color: var(--gray); }
+    .compare-col li.no::before { content: '✗ '; color: var(--gray); }
 
     .testimonial {
-      background-color: white;
-      padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.5vw, 2.5rem);
+      background: white;
+      padding: 2.5rem;
       border-radius: var(--radius);
-      margin: clamp(40px, 8vw, 80px) auto;
+      margin: 60px auto;
       max-width: 800px;
-      color: var(--text);
-      position: relative;
       box-shadow: var(--shadow-medium);
-      border-left: 5px solid #000000;
-      width: calc(100% - 10%);
+      border-left: 5px solid #000;
     }
     
-    .testimonial::before {
-      content: "\201C";
-      font-size: clamp(3rem, 6vw, 5rem);
-      position: absolute;
-      left: 20px;
-      top: 10px;
-      color: #3a3a3a;
-      font-weight: 800;
-      opacity: 0.2;
-    }
-    
-    .testimonial-text {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
-      font-style: italic;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-    
-    .testimonial-author {
-      font-weight: 700;
-      color: var(--text);
-      text-align: right;
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-    }
-    
-    .testimonial-role {
-      color: var(--text-light);
-      text-align: right;
-      font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-    }
+    .testimonial-text { font-size: 1.1rem; font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
+    .testimonial-author { font-weight: 700; text-align: right; }
 
     .faq {
-      padding: clamp(40px, 8vw, 80px) 5%;
+      padding: 40px 5%;
       max-width: 800px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .faq-item {
-      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      margin-bottom: 1rem;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow-light);
-      transition: all 0.3s ease;
-    }
-    
-    .faq-item:hover {
-      box-shadow: var(--shadow-medium);
     }
     
     .faq-question {
-      background-color: var(--accent);
-      padding: clamp(1rem, 2vw, 1.5rem);
+      background: var(--accent);
+      padding: 1.2rem;
       font-weight: 600;
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-question:hover {
-      background-color: var(--accent-dark);
     }
     
     .faq-answer {
-      padding: 0 clamp(1rem, 2vw, 1.5rem);
+      padding: 0 1.2rem;
       max-height: 0;
       overflow: hidden;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
     
-    .faq-answer.active {
-      padding: clamp(1rem, 2vw, 1.5rem);
-      max-height: 500px;
-    }
-    
-    .faq-toggle {
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-    
-    .faq-toggle.active {
-      transform: rotate(180deg);
-    }
+    .faq-answer.active { padding: 1.2rem; max-height: 400px; }
+    .faq-toggle { transition: transform 0.3s; }
+    .faq-toggle.active { transform: rotate(180deg); }
 
     .cta-final {
-      background: #000000;
-      padding: clamp(40px, 8vw, 80px) 5%;
+      background: #000;
+      padding: 60px 5%;
       text-align: center;
       border-radius: var(--radius);
       max-width: 1000px;
-      margin: clamp(40px, 8vw, 80px) auto;
+      margin: 60px auto;
       color: white;
-      box-shadow: var(--shadow-dark);
-      width: calc(100% - 10%);
     }
     
-    .cta-final h3 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: clamp(1rem, 3vw, 1.5rem);
-      font-weight: 700;
-    }
-    
-    .cta-final p {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
-      max-width: 700px;
-      margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
-      opacity: 0.9;
-    }
+    .cta-final h3 { font-size: 2rem; margin-bottom: 1rem; }
+    .cta-final p { margin-bottom: 1.5rem; opacity: 0.9; }
+    .cta-final .button { background: white; color: black; }
+    .cta-final .button:hover { background: var(--accent); }
 
     footer {
-      background-color: #1d1d1f;
+      background: #1d1d1f;
       color: #a1a1a6;
       text-align: center;
-      padding: clamp(2rem, 4vw, 3rem) 5% clamp(1.5rem, 3vw, 2rem);
-      margin-top: clamp(40px, 8vw, 60px);
+      padding: 3rem 5% 2rem;
+      margin-top: 60px;
     }
     
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: clamp(1rem, 2vw, 2rem);
-      margin-bottom: clamp(1.5rem, 3vw, 2rem);
+      gap: 2rem;
       flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
     
-    .footer-links a {
-      color: #a1a1a6;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      font-size: clamp(0.9rem, 1.1vw, 1rem);
-    }
-    
-    .footer-links a:hover {
-      color: white;
-      text-decoration: underline;
-    }
+    .footer-links a { color: #a1a1a6; text-decoration: none; }
+    .footer-links a:hover { color: white; }
     
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: clamp(1rem, 2vw, 1.5rem);
-      margin: clamp(1.5rem, 3vw, 2rem) 0;
+      gap: 1rem;
+      margin: 1.5rem 0;
     }
     
     .icon-link {
-      width: clamp(40px, 6vw, 48px);
-      height: clamp(40px, 6vw, 48px);
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background-color: #2c2c2e;
+      background: #2c2c2e;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
       text-decoration: none;
-      flex-shrink: 0;
     }
     
-    .icon-link:hover {
-      background: #000000;
-      transform: translateY(-5px);
-    }
-    
-    .copyright {
-      margin-top: clamp(1rem, 3vw, 2rem);
-      font-size: clamp(0.8rem, 1.1vw, 0.9rem);
-      color: #8e8e93;
-    }
+    .icon-link:hover { background: #000; transform: translateY(-3px); }
+    .copyright { font-size: 0.85rem; color: #8e8e93; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes fadeInUp {
-      from { 
-        opacity: 0; 
-        transform: translateY(30px); 
-      }
-      to { 
-        opacity: 1; 
-        transform: translateY(0); 
-      }
-    }
-    
-    @keyframes slideDown {
-      from { 
-        opacity: 0; 
-        transform: translateY(-20px); 
-      }
-      to { 
-        opacity: 1; 
-        transform: translateY(0); 
-      }
-    }
-    
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 0, 0, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
-    }
-    
-    .feature-card:nth-child(1) { animation: fadeInUp 0.6s ease 0.2s forwards; opacity: 0; }
-    .feature-card:nth-child(2) { animation: fadeInUp 0.6s ease 0.4s forwards; opacity: 0; }
-    .feature-card:nth-child(3) { animation: fadeInUp 0.6s ease 0.6s forwards; opacity: 0; }
-    .feature-card:nth-child(4) { animation: fadeInUp 0.6s ease 0.8s forwards; opacity: 0; }
-    
-    .pricing-card:nth-child(1) { animation: fadeInUp 0.8s ease 0.2s forwards; opacity: 0; }
-    .pricing-card:nth-child(2) { animation: fadeInUp 0.8s ease 0.4s forwards; opacity: 0; }
-    .pricing-card:nth-child(3) { animation: fadeInUp 0.8s ease 0.6s forwards; opacity: 0; }
-
-    @media (max-width: 992px) {
-      .pricing-card {
-        min-width: 250px;
-      }
-    }
-    
     @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
       nav {
         display: none;
         position: fixed;
@@ -705,98 +474,13 @@
         justify-content: center;
         align-items: center;
         z-index: 1000;
-        padding: 2rem;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
       }
-      
-      nav.active {
-        display: flex;
-        transform: translateY(0);
-      }
-      
-      nav a {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      .pricing-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .pricing-card {
-        max-width: 100%;
-        min-width: unset;
-      }
-      
-      .pricing-card.popular {
-        transform: scale(1);
-      }
-      
-      .pricing-card.popular:hover {
-        transform: translateY(-10px);
-      }
-    }
-    
-    @media (max-width: 480px) {
-      header {
-        padding: 1rem 1rem;
-      }
-      
-      header.scrolled {
-        padding: 0.8rem 1rem;
-      }
-      
-      .hero {
-        padding: 140px 1rem 60px;
-      }
-      
-      .features, .pricing, .faq, .cta-final {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      
-      .note, .testimonial {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        width: calc(100% - 2rem);
-      }
-      
-      .feature-card {
-        padding: 1.5rem;
-      }
-      
-      .pricing-card {
-        padding: 1.5rem;
-      }
-    }
-    
-    @media print {
-      .button, .mobile-menu-btn, .social-icons {
-        display: none !important;
-      }
-      
-      body {
-        background: white !important;
-        color: black !important;
-      }
-      
-      .hero, .pricing, .cta-final {
-        background: white !important;
-        color: black !important;
-      }
-      
-      .hero h1, .section-title span, .price {
-        background: none !important;
-        -webkit-background-clip: unset !important;
-        background-clip: unset !important;
-        color: black !important;
-      }
+      nav.active { display: flex; }
+      nav a { margin: 1rem 0; font-size: 1.2rem; }
+      .pricing-container { flex-direction: column; align-items: center; }
+      .pricing-card.popular { transform: scale(1); }
+      .pill-switch { flex-direction: column; align-items: center; }
+      .compare-grid { grid-template-columns: 1fr; gap: 15px; }
     }
   </style>
 </head>
@@ -813,286 +497,445 @@
       <a href="terms-of-service.html">Terms</a>
       <a href="privacy-policy.html">Privacy</a>
     </nav>
-    <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-menu-toggle">
+    <button class="mobile-menu-btn" id="mobile-menu-toggle">
       <i class="fas fa-bars"></i>
     </button>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h1>Professional GitHub Pages Websites</h1>
-      <p>Custom, conversion-optimized websites built exclusively with GitHub Pages. Perfect for creators, startups, and small businesses who want fast, professional, and affordable web presence.</p>
-      <a href="https://t.me/kai_btc" target="_blank" rel="noopener" class="button">
-        <i class="fas fa-paper-plane"></i>
-        Request Access
+      <div class="platform-badge">
+        <span class="platform"><i class="fab fa-github"></i> GitHub Pages</span>
+        <span class="platform"><i class="fab fa-shopify"></i> Shopify</span>
+        <span class="platform"><i class="fab fa-wordpress"></i> WordPress</span>
+      </div>
+      <h1>Custom Websites That Work For You</h1>
+      <p>Choose your path: monthly management with full support, or one-time purchase with full ownership.</p>
+      <a href="https://t.me/kai_btc" target="_blank" class="button">
+        <i class="fab fa-telegram"></i>
+        Book a Free Consult
       </a>
     </div>
   </section>
 
   <section id="features" class="features">
-    <h2 class="section-title">Why Choose <span>Kai Funded</span></h2>
+    <h2 class="section-title">What <span>You Get</span></h2>
     <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fas fa-bolt"></i>
-      </div>
-      <h3>Speedy Delivery</h3>
-      <p>Get your site live in as little as 48 hours. We prioritize efficiency without compromising quality.</p>
+      <div class="feature-icon"><i class="fas fa-palette"></i></div>
+      <h3>Custom Design</h3>
+      <p>Premium, unique design tailored to your brand — never a template.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fas fa-mobile-alt"></i>
-      </div>
-      <h3>Mobile Optimized</h3>
-      <p>Seamless experience on any device. All our websites are fully responsive and mobile-first.</p>
+      <div class="feature-icon"><i class="fab fa-github"></i></div>
+      <h3>Full Ownership</h3>
+      <p>You own the code. We transfer GitHub repo ownership to you.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fas fa-tag"></i>
-      </div>
-      <h3>Affordable Plans</h3>
-      <p>Transparent pricing with no hidden fees. Choose a plan that fits your budget and needs.</p>
+      <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+      <h3>Optimized & Fast</h3>
+      <p>Lightning fast loading, SEO-ready, fully responsive.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fab fa-github"></i>
-      </div>
-      <h3>GitHub Pages Expert</h3>
-      <p>Specializing exclusively in GitHub Pages for fast, reliable, and free hosting solutions.</p>
+      <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+      <h3>Secure by Default</h3>
+      <p>Built with security best practices from day one.</p>
     </div>
   </section>
 
-  <div class="note">
-    <p><strong>Choose Your Tier:</strong> Basic ($650), Standard ($1600), Premium ($3200)</p>
+  <!-- PILL SWITCH FOR RETAINER VS ONE-TIME -->
+  <div class="pill-switch" id="pricing-switch">
+    <div class="pill active" data-mode="retainer">📅 Monthly Retainer</div>
+    <div class="pill" data-mode="one-time">💸 One-Time Purchase</div>
   </div>
 
-  <section id="pricing" class="pricing">
-    <h2 class="section-title">Simple, <span>Transparent</span> Pricing</h2>
+  <!-- RETAINER PRICING (MONTHLY) -->
+  <section id="pricing" class="pricing-section retainer-mode">
+    <h2 class="section-title">Monthly <span>Retainer</span> Plans</h2>
     <div class="pricing-container">
       <div class="pricing-card">
-        <h3>Basic</h3>
-        <div class="price">$650</div>
+        <h3>Maintenance</h3>
+        <div class="price">$147 <small>/month</small></div>
+        <div class="design-fee"><strong>+ $650</strong> one-time design fee</div>
+        <div class="initial-payment">💰 <strong>First month total: $797</strong><br>(Design + first month)</div>
+        <div class="badge-list">
+          <span class="badge-item">✓ Daily Backups</span>
+          <span class="badge-item">✓ Uptime Monitoring</span>
+          <span class="badge-item">✓ Security Scans</span>
+        </div>
+        <div class="what-you-get" style="margin-top: 15px;">→ What's included:</div>
         <ul>
-          <li>1-page site</li>
-          <li>Delivered in 48 hours</li>
-          <li>GitHub Pages hosting</li>
-          <li>Mobile responsive design</li>
-          <li>Basic SEO setup</li>
-          <li>Custom domain support</li>
+          <li>Custom website design (1 page)</li>
+          <li>Unlimited bug fixes</li>
+          <li>Small content edits (text/images)</li>
+          <li>Plugin & theme updates</li>
+          <li>Daily automated backups</li>
+          <li>24/7 uptime monitoring</li>
+          <li>Email support (24hr response)</li>
         </ul>
-        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Get Started</a>
+        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Start Maintenance</a>
       </div>
       
       <div class="pricing-card popular">
         <div class="popular-badge">Most Popular</div>
-        <h3>Standard</h3>
-        <div class="price">$1600</div>
+        <h3>Growth</h3>
+        <div class="price">$397 <small>/month</small></div>
+        <div class="design-fee"><strong>+ $1,600</strong> one-time design fee</div>
+        <div class="initial-payment">💰 <strong>First month total: $1,997</strong><br>(Design + first month)</div>
+        <div class="badge-list">
+          <span class="badge-item">✓ CRO Focused</span>
+          <span class="badge-item">✓ A/B Testing</span>
+          <span class="badge-item">✓ Priority Support</span>
+        </div>
+        <div class="what-you-get" style="margin-top: 15px;">→ What's included:</div>
         <ul>
-          <li>Up to 5 pages</li>
-          <li>1 revision included</li>
-          <li>GitHub Pages deployment</li>
-          <li>Advanced SEO optimization</li>
-          <li>Contact form integration</li>
-          <li>Analytics setup</li>
-          <li>Performance optimization</li>
+          <li>Custom website (up to 5 pages)</li>
+          <li>Everything in Maintenance, plus:</li>
+          <li>Conversion rate optimization</li>
+          <li>Landing page creation & edits</li>
+          <li>Product page optimization</li>
+          <li>Speed & performance improvements</li>
+          <li>A/B testing setup & analysis</li>
+          <li>Priority support (4hr response)</li>
+          <li>Monthly performance report</li>
         </ul>
-        <a href="https://t.me/kai_btc" target="_blank" class="button">Get Started</a>
+        <a href="https://t.me/kai_btc" target="_blank" class="button">Start Growth</a>
       </div>
       
       <div class="pricing-card">
-        <h3>Premium</h3>
-        <div class="price">$3200</div>
+        <h3>Full Management</h3>
+        <div class="price">$997 <small>/month</small></div>
+        <div class="design-fee"><strong>+ $3,200</strong> one-time design fee</div>
+        <div class="initial-payment">💰 <strong>First month total: $4,197</strong><br>(Design + first month)</div>
+        <div class="badge-list">
+          <span class="badge-item">✓ Full Service</span>
+          <span class="badge-item">✓ 24/7 Support</span>
+          <span class="badge-item">✓ Strategy Calls</span>
+        </div>
+        <div class="what-you-get" style="margin-top: 15px;">→ What's included:</div>
         <ul>
-          <li>Full custom website</li>
-          <li>3 revisions included</li>
-          <li>GitHub Pages expert setup</li>
-          <li>Premium SEO optimization</li>
-          <li>Priority support</li>
-          <li>Custom animations & effects</li>
-          <li>Advanced performance tuning</li>
-          <li>Git repository handover</li>
+          <li>Full custom e-commerce store</li>
+          <li>Everything in Growth, plus:</li>
+          <li>Product uploads & inventory management</li>
+          <li>Store redesigns & ongoing updates</li>
+          <li>Email flow setup (abandoned cart, welcome, post-purchase)</li>
+          <li>Marketing campaign tweaks</li>
+          <li>24/7 priority support (1hr response)</li>
+          <li>Weekly strategy & growth calls</li>
+          <li>Quarterly design refresh</li>
         </ul>
-        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Get Started</a>
+        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Start Full Management</a>
       </div>
+    </div>
+    
+    <!-- Comparison Box -->
+    <div class="compare-box">
+      <h4 style="text-align: center; margin-bottom: 15px;">What Your Retainer Includes</h4>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h4>Maintenance</h4>
+          <ul>
+            <li class="yes">Daily Backups</li>
+            <li class="yes">Uptime Monitoring</li>
+            <li class="yes">Security Updates</li>
+            <li class="yes">Email Support</li>
+            <li class="no">CRO Optimization</li>
+            <li class="no">Strategy Calls</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>Growth</h4>
+          <ul>
+            <li class="yes">All Maintenance +</li>
+            <li class="yes">CRO Improvements</li>
+            <li class="yes">Landing Page Edits</li>
+            <li class="yes">A/B Testing</li>
+            <li class="yes">Priority Support</li>
+            <li class="no">Weekly Strategy</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>Full Management</h4>
+          <ul>
+            <li class="yes">All Growth +</li>
+            <li class="yes">Product Management</li>
+            <li class="yes">Email Flows</li>
+            <li class="yes">24/7 Support</li>
+            <li class="yes">Weekly Strategy Calls</li>
+            <li class="yes">Quarterly Refresh</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="note-badge">
+      🔄 Cancel anytime with 30 days notice. You keep all design work and website files. No long-term contracts.
+    </div>
+  </section>
+
+  <!-- ONE-TIME PURCHASE PRICING -->
+  <section id="pricing-one" class="pricing-section one-time-mode" style="display: none;">
+    <h2 class="section-title">One-Time <span>Purchase</span></h2>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>Basic Template</h3>
+        <div class="price">$1,500</div>
+        <div class="github-transfer"><i class="fab fa-github"></i> Full GitHub repo transfer included</div>
+        <div class="what-you-get" style="margin-top: 20px;">→ What you get:</div>
+        <ul>
+          <li>1-page custom website</li>
+          <li>Mobile responsive design</li>
+          <li>Full source code ownership</li>
+          <li>GitHub repository transfer to you</li>
+          <li>Host anywhere (free on GitHub Pages)</li>
+          <li>Basic SEO setup</li>
+          <li>Contact form integration</li>
+        </ul>
+        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Buy Once — $1,500</a>
+      </div>
+      
+      <div class="pricing-card popular">
+        <div class="popular-badge">Best Value</div>
+        <h3>Standard Template</h3>
+        <div class="price">$3,500</div>
+        <div class="github-transfer"><i class="fab fa-github"></i> Full GitHub repo transfer included</div>
+        <div class="what-you-get" style="margin-top: 20px;">→ What you get:</div>
+        <ul>
+          <li>Up to 5-page custom website</li>
+          <li>Advanced SEO optimization</li>
+          <li>Contact form integration</li>
+          <li>Analytics setup</li>
+          <li>Full source code ownership</li>
+          <li>GitHub repository transfer to you</li>
+          <li>Host anywhere</li>
+          <li>Custom animations & effects</li>
+        </ul>
+        <a href="https://t.me/kai_btc" target="_blank" class="button">Buy Once — $3,500</a>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Premium Template</h3>
+        <div class="price">$7,500</div>
+        <div class="github-transfer"><i class="fab fa-github"></i> Full GitHub repo transfer included</div>
+        <div class="what-you-get" style="margin-top: 20px;">→ What you get:</div>
+        <ul>
+          <li>Full custom website / e-commerce store</li>
+          <li>Premium SEO optimization</li>
+          <li>Custom animations & advanced effects</li>
+          <li>Advanced performance tuning</li>
+          <li>Full source code ownership</li>
+          <li>GitHub repository transfer to you</li>
+          <li>Host anywhere</li>
+          <li>1 year of security updates included</li>
+          <li>Priority email support for 30 days</li>
+        </ul>
+        <a href="https://t.me/kai_btc" target="_blank" class="button button-outline">Buy Once — $7,500</a>
+      </div>
+    </div>
+    
+    <!-- Comparison Box for One-Time -->
+    <div class="compare-box">
+      <h4 style="text-align: center; margin-bottom: 15px;">What You Own Forever</h4>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h4>Basic — $1,500</h4>
+          <ul>
+            <li class="yes">1-Page Custom Site</li>
+            <li class="yes">Mobile Responsive</li>
+            <li class="yes">GitHub Transfer</li>
+            <li class="yes">Basic SEO</li>
+            <li class="no">5 Pages</li>
+            <li class="no">Advanced SEO</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>Standard — $3,500</h4>
+          <ul>
+            <li class="yes">5-Page Custom Site</li>
+            <li class="yes">Advanced SEO</li>
+            <li class="yes">Analytics Setup</li>
+            <li class="yes">Custom Animations</li>
+            <li class="yes">Contact Forms</li>
+            <li class="no">E-commerce Ready</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>Premium — $7,500</h4>
+          <ul>
+            <li class="yes">Full E-commerce Store</li>
+            <li class="yes">Premium SEO</li>
+            <li class="yes">1 Year Security Updates</li>
+            <li class="yes">Advanced Effects</li>
+            <li class="yes">Priority Support (30 days)</li>
+            <li class="yes">Complete Ownership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="note-badge">
+      🔑 You get full GitHub repository ownership. Transfer done once payment is confirmed. Host it yourself, anywhere you want. <strong>One payment. Forever yours.</strong>
     </div>
   </section>
 
   <div class="testimonial">
-    <p class="testimonial-text">I needed a landing page fast for my business launch. Kai Funded delivered in less than 48 hours. It looked better than I imagined! The attention to detail and responsive design exceeded my expectations. The GitHub Pages setup was seamless.</p>
-    <p class="testimonial-author">Alex T.</p>
-    <p class="testimonial-role">Startup Owner</p>
+    <p class="testimonial-text">"I started with the Growth retainer at $397/month. After 6 months, my conversion rate doubled. Now I'm on Full Management — best business decision I've made."</p>
+    <p class="testimonial-author">— Marcus T., E-commerce Founder</p>
   </div>
 
   <section id="faq" class="faq">
     <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
     <div class="faq-item">
       <div class="faq-question">
-        How fast is delivery?
+        What's the difference between retainer and one-time?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>Typically within 48–72 hours depending on tier and complexity. Basic sites are usually delivered within 48 hours, while premium sites with more features may take up to 72 hours.</p>
+        <p><strong>Monthly Retainer:</strong> Lower upfront, includes ongoing maintenance, unlimited support, daily backups, security updates, and growth optimizations. Best if you want hands-off management.<br><br>
+        <strong>One-Time Purchase:</strong> Pay once, own everything forever. We transfer the GitHub repository to you. You host it yourself and manage your own updates. Best if you have technical skills or a tight budget.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <div class="faq-question">
-        Which platform do you use?
+        Which is cheaper in the long run?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>We specialize exclusively in GitHub Pages. This allows us to deliver fast, reliable, and free hosting with professional results. GitHub Pages is perfect for portfolios, business sites, and landing pages.</p>
+        <p><strong>One-time is cheaper after ~9-12 months</strong> — but you lose ongoing support, updates, and backups.<br><br>
+        <strong>Retainer costs more long-term</strong> — but you get unlimited support, daily backups, security, CRO improvements, and peace of mind. Most clients choose retainer because the value far exceeds the cost.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <div class="faq-question">
-        What if I don't have content?
+        How does GitHub transfer work for one-time purchase?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>We can use placeholder text/images or help suggest a layout. We also offer content creation services as an add-on. During our initial consultation, we'll discuss your needs and create a content strategy.</p>
+        <p>Once payment is confirmed, we create a private GitHub repository with your website code, then transfer full ownership to your GitHub account. You'll have complete control — clone, deploy, modify, or sell as you wish. No ongoing ties to us.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <div class="faq-question">
-        Do you offer ongoing support?
+        Where can I host my one-time purchase website?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>Yes! All our plans include 30 days of free support. After that, we offer affordable maintenance packages to keep your website updated, secure, and performing optimally on GitHub Pages.</p>
+        <p>Anywhere! GitHub Pages (free), Netlify (free tier), Vercel, Cloudflare Pages, or your own server. We build static HTML/CSS/JS sites that work on any hosting platform.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <div class="faq-question">
-        Can I use my own domain?
+        Can I switch from one-time to retainer later?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>Absolutely! We'll help you set up a custom domain with your GitHub Pages site. All our plans include custom domain configuration support.</p>
+        <p>Absolutely. Many clients start with one-time purchase, then add the Growth or Maintenance retainer later when they want ongoing support. Just message us to upgrade anytime — we'll prorate your first month.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        Do I own the code in both plans?
+        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes! Both plans give you full ownership. In the retainer plan, you own the design after paying the design fee. In one-time, you own everything immediately after payment. No licensing, no restrictions.</p>
       </div>
     </div>
   </section>
 
   <section class="cta-final">
-    <h3>Ready for your professional GitHub Pages website?</h3>
-    <p>Join dozens of satisfied clients who've launched their online presence with Kai Funded. Get started today with a risk-free consultation.</p>
-    <a href="https://t.me/kai_btc" class="button" target="_blank" rel="noopener">
-      <i class="fab fa-github"></i>
-      Start Your Project
+    <h3>Ready to get started?</h3>
+    <p>Not sure which option is right for you? Let's talk. No pressure, just honest advice.</p>
+    <a href="https://t.me/kai_btc" target="_blank" class="button">
+      <i class="fab fa-telegram"></i>
+      Message Us on Telegram
     </a>
   </section>
 
   <footer>
     <div class="footer-links">
-      <a href="index.html">Home</a>
+      <a href="#">Home</a>
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="terms-of-service.html">Terms of Service</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms</a>
+      <a href="privacy-policy.html">Privacy</a>
     </div>
-
     <div class="social-icons">
-      <a href="https://www.instagram.com/kai.funded/" target="_blank" rel="noopener" aria-label="Instagram" class="icon-link">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://t.me/kai_btc" target="_blank" rel="noopener" aria-label="Telegram" class="icon-link">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
-      <a href="https://discord.gg/9gDt4Vfxbu" target="_blank" rel="noopener" aria-label="Discord" class="icon-link">
-        <i class="fab fa-discord"></i>
-      </a>
-      <a href="mailto:thekaifunded@gmail.com" aria-label="Email" class="icon-link">
-        <i class="fas fa-envelope"></i>
-      </a>
+      <a href="https://www.instagram.com/kai.funded/" class="icon-link" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/kai_btc" class="icon-link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://discord.gg/9gDt4Vfxbu" class="icon-link" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="mailto:thekaifunded@gmail.com" class="icon-link"><i class="fas fa-envelope"></i></a>
     </div>
-
-    <div class="copyright">
-      &copy; 2026 Kai Funded. All rights reserved.
-    </div>
+    <div class="copyright">&copy; 2026 Kai Funded. All rights reserved. Cancel anytime with 30 days notice.</div>
   </footer>
 
   <script>
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('main-header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-toggle');
     const nav = document.getElementById('main-nav');
-    
-    mobileMenuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', () => {
       nav.classList.toggle('active');
-      mobileMenuBtn.innerHTML = nav.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
+      menuBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
-    document.querySelectorAll('nav a').forEach(link => {
+    document.querySelectorAll('nav a, .button').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('active');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        if (menuBtn) menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       });
     });
 
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const toggle = question.querySelector('.faq-toggle');
+    // Toggle between Retainer and One-Time pricing
+    const retainerSection = document.querySelector('.retainer-mode');
+    const oneTimeSection = document.querySelector('.one-time-mode');
+    const pills = document.querySelectorAll('.pill');
+    
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const mode = pill.getAttribute('data-mode');
         
-        document.querySelectorAll('.faq-answer.active').forEach(activeAnswer => {
-          if (activeAnswer !== answer) {
-            activeAnswer.classList.remove('active');
-            activeAnswer.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
-          }
-        });
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
         
+        if (mode === 'retainer') {
+          retainerSection.style.display = 'block';
+          oneTimeSection.style.display = 'none';
+        } else {
+          retainerSection.style.display = 'none';
+          oneTimeSection.style.display = 'block';
+        }
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const toggle = q.querySelector('.faq-toggle');
         answer.classList.toggle('active');
         toggle.classList.toggle('active');
       });
     });
 
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
-    });
-
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.feature-card, .pricing-card, .testimonial, .faq-item').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
     });
   </script>
 </body>
