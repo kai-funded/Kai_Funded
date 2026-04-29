@@ -325,7 +325,13 @@
       text-align: center;
       max-width: 800px;
       margin: 30px auto 0;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+    }
+    
+    .legal-note {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-top: 8px;
     }
     
     .compare-box {
@@ -399,7 +405,7 @@
       transition: all 0.3s;
     }
     
-    .faq-answer.active { padding: 1.2rem; max-height: 400px; }
+    .faq-answer.active { padding: 1.2rem; max-height: 500px; }
     .faq-toggle { transition: transform 0.3s; }
     .faq-toggle.active { transform: rotate(180deg); }
 
@@ -458,7 +464,8 @@
     }
     
     .icon-link:hover { background: #000; transform: translateY(-3px); }
-    .copyright { font-size: 0.85rem; color: #8e8e93; }
+    .copyright { font-size: 0.8rem; color: #8e8e93; }
+    .legal-footer { font-size: 0.7rem; color: #6e6e73; margin-top: 1rem; }
 
     @media (max-width: 768px) {
       .mobile-menu-btn { display: block; }
@@ -528,7 +535,7 @@
     <div class="feature-card">
       <div class="feature-icon"><i class="fab fa-github"></i></div>
       <h3>Full Ownership</h3>
-      <p>You own the code. We transfer GitHub repo ownership to you.</p>
+      <p>You own the code. We transfer GitHub repo ownership to you upon full payment.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -627,7 +634,6 @@
       </div>
     </div>
     
-    <!-- Comparison Box -->
     <div class="compare-box">
       <h4 style="text-align: center; margin-bottom: 15px;">What Your Retainer Includes</h4>
       <div class="compare-grid">
@@ -668,7 +674,8 @@
     </div>
     
     <div class="note-badge">
-      🔄 Cancel anytime with 30 days notice. You keep all design work and website files. No long-term contracts.
+      ⚡ <strong>No cancellations. No refunds.</strong> Once work commences (within 1 hour of payment), all sales are final. Design fees and monthly retainers are non-refundable.<br>
+      <span class="legal-note">By proceeding, you agree to our Terms of Service. Custom work beyond scope billed at $97/hour.</span>
     </div>
   </section>
 
@@ -732,7 +739,6 @@
       </div>
     </div>
     
-    <!-- Comparison Box for One-Time -->
     <div class="compare-box">
       <h4 style="text-align: center; margin-bottom: 15px;">What You Own Forever</h4>
       <div class="compare-grid">
@@ -773,7 +779,8 @@
     </div>
     
     <div class="note-badge">
-      🔑 You get full GitHub repository ownership. Transfer done once payment is confirmed. Host it yourself, anywhere you want. <strong>One payment. Forever yours.</strong>
+      ⚡ <strong>No cancellations. No refunds.</strong> Once work commences (within 1 hour of payment), all sales are final. Repository transfer completed upon full payment.<br>
+      <span class="legal-note">By purchasing, you agree to our Terms of Service. All digital deliverables are final.</span>
     </div>
   </section>
 
@@ -790,19 +797,28 @@
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p><strong>Monthly Retainer:</strong> Lower upfront, includes ongoing maintenance, unlimited support, daily backups, security updates, and growth optimizations. Best if you want hands-off management.<br><br>
-        <strong>One-Time Purchase:</strong> Pay once, own everything forever. We transfer the GitHub repository to you. You host it yourself and manage your own updates. Best if you have technical skills or a tight budget.</p>
+        <p><strong>Monthly Retainer:</strong> Lower upfront, includes ongoing maintenance, unlimited support, daily backups, security updates, and growth optimizations.<br><br>
+        <strong>One-Time Purchase:</strong> Pay once, own everything forever. We transfer the GitHub repository to you. You host it yourself and manage your own updates.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <div class="faq-question">
-        Which is cheaper in the long run?
+        Can I cancel or get a refund?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p><strong>One-time is cheaper after ~9-12 months</strong> — but you lose ongoing support, updates, and backups.<br><br>
-        <strong>Retainer costs more long-term</strong> — but you get unlimited support, daily backups, security, CRO improvements, and peace of mind. Most clients choose retainer because the value far exceeds the cost.</p>
+        <p><strong>No.</strong> Once work commences (within 1 hour of payment), no cancellations and no refunds are available under any circumstances. This includes design fees, monthly retainers, and one-time purchases. Please review our Terms of Service before purchasing.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        Can I switch from monthly to one-time?
+        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes, you may request to switch. The one-time purchase price will be the full amount minus credit for your design fee only. Monthly retainer payments do not count toward one-time pricing. Contact us for a custom quote.</p>
       </div>
     </div>
     
@@ -812,27 +828,17 @@
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>Once payment is confirmed, we create a private GitHub repository with your website code, then transfer full ownership to your GitHub account. You'll have complete control — clone, deploy, modify, or sell as you wish. No ongoing ties to us.</p>
+        <p>Once payment is confirmed and cleared, we create a private GitHub repository with your website code, then transfer full ownership to your GitHub account. Transfer typically completes within 14 business days.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <div class="faq-question">
-        Where can I host my one-time purchase website?
+        What if I'm not happy with the work?
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>Anywhere! GitHub Pages (free), Netlify (free tier), Vercel, Cloudflare Pages, or your own server. We build static HTML/CSS/JS sites that work on any hosting platform.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        Can I switch from one-time to retainer later?
-        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-      </div>
-      <div class="faq-answer">
-        <p>Absolutely. Many clients start with one-time purchase, then add the Growth or Maintenance retainer later when they want ongoing support. Just message us to upgrade anytime — we'll prorate your first month.</p>
+        <p>We provide unlimited revisions during the design phase to ensure your satisfaction. Once you approve the final deliverable, the project is considered complete. No refunds are issued after work commences.</p>
       </div>
     </div>
     
@@ -842,7 +848,7 @@
         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        <p>Yes! Both plans give you full ownership. In the retainer plan, you own the design after paying the design fee. In one-time, you own everything immediately after payment. No licensing, no restrictions.</p>
+        <p>Yes. In retainer plans, you own the design after paying the design fee. In one-time, you own everything immediately after payment. Full details in our Terms of Service.</p>
       </div>
     </div>
   </section>
@@ -872,15 +878,14 @@
       <a href="mailto:thekaifunded@gmail.com" class="icon-link"><i class="fas fa-envelope"></i></a>
     </div>
     <div class="copyright">&copy; 2026 Kai Funded. All rights reserved.</div>
+    <div class="legal-footer">By using this website or making a purchase, you agree that no refunds or cancellations are available once work commences.</div>
   </footer>
 
   <script>
-    // Header scroll effect
     window.addEventListener('scroll', () => {
       document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile menu
     const menuBtn = document.getElementById('mobile-menu-toggle');
     const nav = document.getElementById('main-nav');
     menuBtn.addEventListener('click', () => {
@@ -888,14 +893,13 @@
       menuBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
-    document.querySelectorAll('nav a, .button').forEach(link => {
+    document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('active');
         if (menuBtn) menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       });
     });
 
-    // Toggle between Retainer and One-Time pricing
     const retainerSection = document.querySelector('.retainer-mode');
     const oneTimeSection = document.querySelector('.one-time-mode');
     const pills = document.querySelectorAll('.pill');
@@ -903,10 +907,8 @@
     pills.forEach(pill => {
       pill.addEventListener('click', () => {
         const mode = pill.getAttribute('data-mode');
-        
         pills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
-        
         if (mode === 'retainer') {
           retainerSection.style.display = 'block';
           oneTimeSection.style.display = 'none';
@@ -917,7 +919,6 @@
       });
     });
 
-    // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
         const answer = q.nextElementSibling;
@@ -927,14 +928,11 @@
       });
     });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
